@@ -37,6 +37,7 @@ let currentJob = "Teacher"; //Better than job2
 /**********************************************************************************************
 Chapter 01 - Lesson 007: Data Types
 ***********************************************************************************************/
+/*
 //Number: Floating point numbers - Used for decimals and integers
 let x = 9;
 let y = 2.4223;
@@ -68,13 +69,47 @@ console.log(typeof userId); //historical bug where typeof null is object
 //Symbol (ES2015): Value that is unique and cannot be changed
 //BigInt (ES2020): Larger integers than the Number type can hold
 
-/*
-Javascript has dynamic type: We do not have to manually define the data type of the value stored
-in a variable. Instead, data types are determined automatically. Under the hood tha data type is
-assign to the value and not the variable.
-*/
+// Javascript has dynamic type: We do not have to manually define the data type of the value stored
+// in a variable. Instead, data types are determined automatically. Under the hood tha data type is
+// assign to the value and not the variable.
+
 javaScriptIsFun = 42;
 console.log(typeof javaScriptIsFun);
 
 javaScriptIsFun = "YES!";
 console.log(typeof javaScriptIsFun);
+*/
+
+/**********************************************************************************************
+Chapter 01 - Lesson 008: let, const and var
+***********************************************************************************************/
+//let allow you to change the value of the variables
+//or declare a variable without initialize it.
+let age;
+age = 30;
+age = 31;
+
+console.log(age);
+
+//const don't allow you to change the value (they are immutable)
+//a const also don't allow you to declare a variable without initialize it
+
+// const birthYear; // SyntaxError: Missing initializer in const declaration
+
+const birthYear = 1991;
+// birthYear = 1990; // TypeError: Assignment to constant variable.
+
+console.log(birthYear);
+
+//var is the old way of declaring variables
+//they also allow you to change the value, but let is block scope and var is function scope
+var job = "programmer";
+job = "teacher";
+
+console.log(job);
+
+//You can declare a variable without let or var or const (NEVER DO THAT)
+//But this is a terrible practice, because under the hood
+//javascript will declare a field on the global scope to store the variable
+lastName = "Bilbo";
+console.log(lastName);
