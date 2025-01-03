@@ -83,6 +83,7 @@ console.log(typeof javaScriptIsFun);
 /**********************************************************************************************
 Chapter 01 - Lesson 008: let, const and var
 ***********************************************************************************************/
+/*
 //let allow you to change the value of the variables
 //or declare a variable without initialize it.
 let age;
@@ -113,3 +114,47 @@ console.log(job);
 //javascript will declare a field on the global scope to store the variable
 lastName = "Bilbo";
 console.log(lastName);
+*/
+
+/**********************************************************************************************
+Chapter 01 - Lesson 009: Basic Operators
+***********************************************************************************************/
+const currentYear = 2025;
+
+const ageBob = currentYear - 1991; // -> 34
+const ageSarah = currentYear - 1988; // -> 37
+
+console.log(ageBob, ageSarah);
+
+console.log(ageBob * 2);
+console.log(ageBob / 10);
+console.log(2 ** 3); // ** is used for exponentiation
+
+const firstName = "Bilbo";
+const lastName = "Baggins";
+const completeName = firstName + " " + lastName;
+console.log(completeName);
+
+let x = 10 + 5; // = is a assignment operator
+
+//Assignment operators
+x += 10; // x = x + 10 -> 25
+x -= 5; // x = x - 5 -> 20
+x *= 4; // x = x * 4 -> 80
+x /= 2; // x = x / 2 -> 40
+x++; // x = x + 1 -> 41
+x--; // x = x - 1 -> 40
+
+x = console.log(x);
+
+//Comparison operators
+console.log(ageBob > ageSarah); // -> false
+console.log(x < 10); // -> false
+console.log(ageSarah >= 18); // -> true
+console.log(ageBob <= 50); // -> true
+
+const isFullAge = ageSarah >= 18; // -> true
+console.log(isFullAge);
+
+//works thanks the precedence order
+console.log(currentYear - 2008 >= 18); // -> false
