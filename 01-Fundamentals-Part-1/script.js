@@ -162,17 +162,53 @@ Chapter 01 - Lesson 009: Basic Operators
 /**********************************************************************************************
 Chapter 01 - Lesson 010: Operator Precedence
 ***********************************************************************************************/
-const currentYear = 2025;
+// const currentYear = 2025;
 
-const ageBob = currentYear - 1991; // -> 34
-const ageSarah = currentYear - 1988; // -> 37
+// const ageBob = currentYear - 1991; // -> 34
+// const ageSarah = currentYear - 1988; // -> 37
 
-//works thanks to the precedence order
-console.log(currentYear - 2008 >= 18); // -> false
+// //works thanks to the precedence order
+// console.log(currentYear - 2008 >= 18); // -> false
 
-let x, y;
-x = y = 25 - 10 - 5; // x = y = 10;
-console.log(x, y);
+// let x, y;
+// x = y = 25 - 10 - 5; // x = y = 10;
+// console.log(x, y);
 
-const averageAge = (ageBob + ageSarah) / 2;
-console.log(ageBob, ageSarah, averageAge);
+// const averageAge = (ageBob + ageSarah) / 2;
+// console.log(ageBob, ageSarah, averageAge);
+
+/**********************************************************************************************
+Chapter 01 - Lesson 011: Coding Challenge #1
+***********************************************************************************************/
+/*
+Mark and John are trying to compare their BMI (Body Mass Index), which is
+calculated using the formula:
+BMI = mass / height ** 2 = mass / (height * height) (mass in kg
+and height in meter).
+Your tasks:
+1. Store Mark's and John's mass and height in variables
+2. Calculate both their BMIs using the formula (you can even implement both
+versions)
+3. Create a Boolean variable 'markHigherBMI' containing information about
+whether Mark has a higher BMI than John.
+
+TEST DATA
+Data 1: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95m tall.
+Data 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1.76m tall.
+*/
+
+const markMass = 95;
+const markHeight = 1.88;
+
+markBMI = markMass / markHeight ** 2;
+console.log(markBMI);
+
+const johnMass = 85;
+const johnHeight = 1.76;
+
+johnBMI = johnMass / johnHeight ** 2;
+
+console.log(johnBMI);
+
+markHigherBMI = markBMI > johnBMI;
+console.log(markHigherBMI);
