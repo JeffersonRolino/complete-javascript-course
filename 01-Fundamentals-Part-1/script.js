@@ -197,18 +197,47 @@ Data 1: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95m 
 Data 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1.76m tall.
 */
 
-const markMass = 95;
-const markHeight = 1.88;
+// const markMass = 95;
+// const markHeight = 1.88;
 
-markBMI = markMass / markHeight ** 2;
-console.log(markBMI);
+// markBMI = markMass / markHeight ** 2;
+// console.log(markBMI);
 
-const johnMass = 85;
-const johnHeight = 1.76;
+// const johnMass = 85;
+// const johnHeight = 1.76;
 
-johnBMI = johnMass / johnHeight ** 2;
+// johnBMI = johnMass / johnHeight ** 2;
 
-console.log(johnBMI);
+// console.log(johnBMI);
 
-markHigherBMI = markBMI > johnBMI;
-console.log(markHigherBMI);
+// markHigherBMI = markBMI > johnBMI;
+// console.log(markHigherBMI);
+
+/**********************************************************************************************
+Chapter 01 - Lesson 013: Strings and Template Literals
+***********************************************************************************************/
+const firstName = "Jonas";
+const job = "teacher";
+const birthYear = 1991;
+const year = 2025;
+
+const tradionalConcatenation =
+  "I'am " + firstName + ", a " + (year - birthYear) + " years old " + job + "!";
+console.log(tradionalConcatenation);
+
+const templateString = `I'am ${firstName}, a ${
+  year - birthYear
+} years old ${job}!`;
+console.log(templateString);
+
+console.log(`Just a regular string...`);
+
+console.log(
+  "String with \n\
+multiple \n\
+lines"
+);
+
+console.log(`String with
+multiple
+lines using Template Literals`);
