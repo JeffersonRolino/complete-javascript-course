@@ -216,28 +216,53 @@ Data 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1.76m 
 /**********************************************************************************************
 Chapter 01 - Lesson 013: Strings and Template Literals
 ***********************************************************************************************/
-const firstName = "Jonas";
-const job = "teacher";
-const birthYear = 1991;
-const year = 2025;
+// const firstName = "Jonas";
+// const job = "teacher";
+// const birthYear = 1991;
+// const year = 2025;
 
-const tradionalConcatenation =
-  "I'am " + firstName + ", a " + (year - birthYear) + " years old " + job + "!";
-console.log(tradionalConcatenation);
+// const tradionalConcatenation =
+//   "I'am " + firstName + ", a " + (year - birthYear) + " years old " + job + "!";
+// console.log(tradionalConcatenation);
 
-const templateString = `I'am ${firstName}, a ${
-  year - birthYear
-} years old ${job}!`;
-console.log(templateString);
+// const templateString = `I'am ${firstName}, a ${
+//   year - birthYear
+// } years old ${job}!`;
+// console.log(templateString);
 
-console.log(`Just a regular string...`);
+// console.log(`Just a regular string...`);
 
-console.log(
-  "String with \n\
-multiple \n\
-lines"
-);
+// console.log(
+//   "String with \n\
+// multiple \n\
+// lines"
+// );
 
-console.log(`String with
-multiple
-lines using Template Literals`);
+// console.log(`String with
+// multiple
+// lines using Template Literals`);
+
+/**********************************************************************************************
+Chapter 01 - Lesson 014: Taking Decisions if else Statements
+***********************************************************************************************/
+const age = 16;
+
+if (age >= 18) {
+  console.log("Sarah can start apply for driving license");
+} else {
+  const yearLeft = 18 - age;
+  console.log(
+    `Sarah is too young to drive. Her must wait another ${yearLeft} years.`
+  );
+}
+
+const birthYear = 1988;
+let century;
+
+if (birthYear <= 2000) {
+  century = 20;
+} else {
+  century = 21;
+}
+
+console.log(`James was born in the ${century} century`);
