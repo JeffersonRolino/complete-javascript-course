@@ -245,24 +245,58 @@ Chapter 01 - Lesson 013: Strings and Template Literals
 /**********************************************************************************************
 Chapter 01 - Lesson 014: Taking Decisions if else Statements
 ***********************************************************************************************/
-const age = 16;
+// const age = 16;
 
-if (age >= 18) {
-  console.log("Sarah can start apply for driving license");
+// if (age >= 18) {
+//   console.log("Sarah can start apply for driving license");
+// } else {
+//   const yearLeft = 18 - age;
+//   console.log(
+//     `Sarah is too young to drive. Her must wait another ${yearLeft} years.`
+//   );
+// }
+
+// const birthYear = 1988;
+// let century;
+
+// if (birthYear <= 2000) {
+//   century = 20;
+// } else {
+//   century = 21;
+// }
+
+// console.log(`James was born in the ${century} century`);
+
+/**********************************************************************************************
+Chapter 01 - Lesson 015: Coding Challenge #2
+***********************************************************************************************/
+/*
+Use the BMI example from Challenge #1, and the code you already wrote, and
+improve it.
+Your tasks:
+1. Print a nice output to the console, saying who has the higher BMI. The message
+is either "Mark's BMI is higher than John's!" or "John's BMI is higher than Mark's!"
+2. Use a template literal to include the BMI values in the outputs. Example: "Mark's
+BMI (28.3) is higher than John's (23.9)!"
+*/
+
+//CASE 01
+// const markMass = 78;
+// const markHeight = 1.69;
+// const johnMass = 92;
+// const johnHeight = 1.95;
+
+//CASE 02
+const markMass = 95;
+const markHeight = 1.88;
+const johnMass = 85;
+const johnHeight = 1.76;
+
+markBMI = markMass / markHeight ** 2;
+johnBMI = johnMass / johnHeight ** 2;
+
+if (markBMI > johnBMI) {
+  console.log(`Mark's BMI (${markBMI}) is higher than John's BMI (${johnBMI})`);
 } else {
-  const yearLeft = 18 - age;
-  console.log(
-    `Sarah is too young to drive. Her must wait another ${yearLeft} years.`
-  );
+  console.log(`John's BMI (${johnBMI}) is higher than Mark's BMI (${markBMI})`);
 }
-
-const birthYear = 1988;
-let century;
-
-if (birthYear <= 2000) {
-  century = 20;
-} else {
-  century = 21;
-}
-
-console.log(`James was born in the ${century} century`);
