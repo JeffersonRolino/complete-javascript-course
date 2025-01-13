@@ -287,16 +287,49 @@ BMI (28.3) is higher than John's (23.9)!"
 // const johnHeight = 1.95;
 
 //CASE 02
-const markMass = 95;
-const markHeight = 1.88;
-const johnMass = 85;
-const johnHeight = 1.76;
+// const markMass = 95;
+// const markHeight = 1.88;
+// const johnMass = 85;
+// const johnHeight = 1.76;
 
-markBMI = markMass / markHeight ** 2;
-johnBMI = johnMass / johnHeight ** 2;
+// markBMI = markMass / markHeight ** 2;
+// johnBMI = johnMass / johnHeight ** 2;
 
-if (markBMI > johnBMI) {
-  console.log(`Mark's BMI (${markBMI}) is higher than John's BMI (${johnBMI})`);
-} else {
-  console.log(`John's BMI (${johnBMI}) is higher than Mark's BMI (${markBMI})`);
-}
+// if (markBMI > johnBMI) {
+//   console.log(`Mark's BMI (${markBMI}) is higher than John's BMI (${johnBMI})`);
+// } else {
+//   console.log(`John's BMI (${johnBMI}) is higher than Mark's BMI (${markBMI})`);
+// }
+
+/**********************************************************************************************
+Chapter 01 - Lesson 016: Type Conversion and Coercion
+***********************************************************************************************/
+//Type conversion is when we manually convert from a data type to another.
+//Type coercion is when javascript converts the data type behind the scenes.
+
+//Javascript can only convert to Number, String and Boolean
+const inputYear = "1991";
+console.log(inputYear + 18); //without conversion
+console.log(Number(inputYear) + 18); //with conversion
+
+console.log(Number("Jeff")); //Not a Number (invalid number)
+console.log(typeof NaN);
+
+console.log(String(23), 23);
+
+//Type coercion
+console.log("I am " + 23 + " years old"); //Javascript coerce the 23 number to a string
+console.log("23" - "10" - 3); //The minus sign coerce the strings 23 and 10 to numbers
+console.log("2" * 3); //The multiplication sign also coerce the string to a number
+console.log("9" / 3); //The division sign also coerce the string to a number
+console.log("23" + "10" + 3); //But if you use a plus sign this do not happen
+
+let n = "1" + 1; //string 11
+n = n - 1; //string 11 coerce to the number 11 and -1 is equal 10;
+console.log(n, typeof n);
+
+let x = 2 + 3 + 4 + "5"; // 95 string
+console.log(x, typeof x);
+
+let y = "10" - "4" - "3" - 2 + "5";
+console.log(y, typeof y);
