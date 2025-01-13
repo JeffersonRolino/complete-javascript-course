@@ -308,28 +308,60 @@ Chapter 01 - Lesson 016: Type Conversion and Coercion
 //Type coercion is when javascript converts the data type behind the scenes.
 
 //Javascript can only convert to Number, String and Boolean
-const inputYear = "1991";
-console.log(inputYear + 18); //without conversion
-console.log(Number(inputYear) + 18); //with conversion
 
-console.log(Number("Jeff")); //Not a Number (invalid number)
-console.log(typeof NaN);
+// const inputYear = "1991";
+// console.log(inputYear + 18); //without conversion
+// console.log(Number(inputYear) + 18); //with conversion
 
-console.log(String(23), 23);
+// console.log(Number("Jeff")); //Not a Number (invalid number)
+// console.log(typeof NaN);
 
-//Type coercion
-console.log("I am " + 23 + " years old"); //Javascript coerce the 23 number to a string
-console.log("23" - "10" - 3); //The minus sign coerce the strings 23 and 10 to numbers
-console.log("2" * 3); //The multiplication sign also coerce the string to a number
-console.log("9" / 3); //The division sign also coerce the string to a number
-console.log("23" + "10" + 3); //But if you use a plus sign this do not happen
+// console.log(String(23), 23);
 
-let n = "1" + 1; //string 11
-n = n - 1; //string 11 coerce to the number 11 and -1 is equal 10;
-console.log(n, typeof n);
+// //Type coercion
+// console.log("I am " + 23 + " years old"); //Javascript coerce the 23 number to a string
+// console.log("23" - "10" - 3); //The minus sign coerce the strings 23 and 10 to numbers
+// console.log("2" * 3); //The multiplication sign also coerce the string to a number
+// console.log("9" / 3); //The division sign also coerce the string to a number
+// console.log("23" + "10" + 3); //But if you use a plus sign this do not happen
 
-let x = 2 + 3 + 4 + "5"; // 95 string
-console.log(x, typeof x);
+// let n = "1" + 1; //string 11
+// n = n - 1; //string 11 coerce to the number 11 and -1 is equal 10;
+// console.log(n, typeof n);
 
-let y = "10" - "4" - "3" - 2 + "5";
-console.log(y, typeof y);
+// let x = 2 + 3 + 4 + "5"; // 95 string
+// console.log(x, typeof x);
+
+// let y = "10" - "4" - "3" - 2 + "5";
+// console.log(y, typeof y);
+
+/**********************************************************************************************
+Chapter 01 - Lesson 017: Truthy and Falsy Values
+***********************************************************************************************/
+//Javascript has 5 falsy values: 0, '', undefined, null, NaN
+console.log(Boolean(0));
+console.log(Boolean(""));
+console.log(Boolean(undefined));
+console.log(Boolean(null));
+console.log(Boolean(NaN));
+
+//Truthy values
+console.log(Boolean({}));
+console.log(Boolean("Jeff"));
+
+const money = 100;
+
+if (money) {
+  console.log("Don't spend it all...");
+} else {
+  console.log("You should get a job!");
+}
+
+let height = 1.75;
+console.log(typeof height);
+
+if (height) {
+  console.log("Height is defined");
+} else {
+  console.log("Height is undefined");
+}
