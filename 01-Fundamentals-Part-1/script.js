@@ -339,29 +339,59 @@ Chapter 01 - Lesson 016: Type Conversion and Coercion
 Chapter 01 - Lesson 017: Truthy and Falsy Values
 ***********************************************************************************************/
 //Javascript has 5 falsy values: 0, '', undefined, null, NaN
-console.log(Boolean(0));
-console.log(Boolean(""));
-console.log(Boolean(undefined));
-console.log(Boolean(null));
-console.log(Boolean(NaN));
+// console.log(Boolean(0));
+// console.log(Boolean(""));
+// console.log(Boolean(undefined));
+// console.log(Boolean(null));
+// console.log(Boolean(NaN));
 
-//Truthy values
-console.log(Boolean({}));
-console.log(Boolean("Jeff"));
+// //Truthy values
+// console.log(Boolean({}));
+// console.log(Boolean("Jeff"));
 
-const money = 100;
+// const money = 100;
 
-if (money) {
-  console.log("Don't spend it all...");
-} else {
-  console.log("You should get a job!");
+// if (money) {
+//   console.log("Don't spend it all...");
+// } else {
+//   console.log("You should get a job!");
+// }
+
+// let height = 1.75;
+// console.log(typeof height);
+
+// if (height) {
+//   console.log("Height is defined");
+// } else {
+//   console.log("Height is undefined");
+// }
+
+/**********************************************************************************************
+Chapter 01 - Lesson 018: Equality Operators == vs. ===
+***********************************************************************************************/
+const age = 18;
+
+if (age == 18) {
+    console.log("You just became an adult!");
 }
 
-let height = 1.75;
-console.log(typeof height);
+console.log("Loose comparison operator, '18' == 18: ", "18" == 18); //Loose comparison operator
+console.log("Strict comparison operator, '18' === 18: ", "18" === 18); //Strict comparison operator
 
-if (height) {
-  console.log("Height is defined");
+const favoriteNumber = Number(prompt("What's your favorite number?"));
+console.log(favoriteNumber);
+console.log(typeof favoriteNumber);
+
+if (favoriteNumber === 23) {
+    console.log("Cool! 23 is an amazing number!");
+} else if (favoriteNumber === 7) {
+    console.log("7 is also a cool number");
+} else if (favoriteNumber === 42) {
+    console.log("42 is my favorite number too...");
 } else {
-  console.log("Height is undefined");
+    console.log("I don't like your number");
+}
+
+if (favoriteNumber !== 23) {
+    console.log("Why not the 23?");
 }
