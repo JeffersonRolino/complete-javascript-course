@@ -369,29 +369,54 @@ Chapter 01 - Lesson 017: Truthy and Falsy Values
 /**********************************************************************************************
 Chapter 01 - Lesson 018: Equality Operators == vs. ===
 ***********************************************************************************************/
-const age = 18;
+// const age = 18;
 
-if (age == 18) {
-    console.log("You just became an adult!");
-}
+// if (age == 18) {
+//     console.log("You just became an adult!");
+// }
 
-console.log("Loose comparison operator, '18' == 18: ", "18" == 18); //Loose comparison operator
-console.log("Strict comparison operator, '18' === 18: ", "18" === 18); //Strict comparison operator
+// console.log("Loose comparison operator, '18' == 18: ", "18" == 18); //Loose comparison operator
+// console.log("Strict comparison operator, '18' === 18: ", "18" === 18); //Strict comparison operator
 
-const favoriteNumber = Number(prompt("What's your favorite number?"));
-console.log(favoriteNumber);
-console.log(typeof favoriteNumber);
+// const favoriteNumber = Number(prompt("What's your favorite number?"));
+// console.log(favoriteNumber);
+// console.log(typeof favoriteNumber);
 
-if (favoriteNumber === 23) {
-    console.log("Cool! 23 is an amazing number!");
-} else if (favoriteNumber === 7) {
-    console.log("7 is also a cool number");
-} else if (favoriteNumber === 42) {
-    console.log("42 is my favorite number too...");
+// if (favoriteNumber === 23) {
+//     console.log("Cool! 23 is an amazing number!");
+// } else if (favoriteNumber === 7) {
+//     console.log("7 is also a cool number");
+// } else if (favoriteNumber === 42) {
+//     console.log("42 is my favorite number too...");
+// } else {
+//     console.log("I don't like your number");
+// }
+
+// if (favoriteNumber !== 23) {
+//     console.log("Why not the 23?");
+// }
+
+/**********************************************************************************************
+Chapter 01 - Lesson 020: Logical Operators
+***********************************************************************************************/
+const hasDriversLicense = true; //A
+const hasGoodVision = true; //B
+
+console.log(hasDriversLicense && hasGoodVision);
+console.log(hasDriversLicense || hasGoodVision);
+console.log(!hasDriversLicense);
+
+// if (hasDriversLicense && hasGoodVision) {
+//     console.log("Sarah is able to drive!");
+// } else {
+//     console.log("Someone else should drive...");
+// }
+
+const isTired = false; // C
+console.log(hasDriversLicense && hasGoodVision && isTired);
+
+if (hasDriversLicense && hasGoodVision && !isTired) {
+    console.log("Sarah is able to drive!");
 } else {
-    console.log("I don't like your number");
-}
-
-if (favoriteNumber !== 23) {
-    console.log("Why not the 23?");
+    console.log("Someone else should drive...");
 }
