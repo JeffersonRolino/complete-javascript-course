@@ -478,45 +478,61 @@ Test data:
 Chapter 01 - Lesson 022: The switch Statement
 ***********************************************************************************************/
 
-const day = "monday";
+// const day = "monday";
 
-switch (day) {
-    case "monday":
-        console.log("Plan course structure.");
-        console.log("Go to coding meeting");
-        break;
-    case "tuesday":
-        console.log("Prepare theory videos");
-        break;
-    case "wednesday":
-    case "thursday":
-        console.log("Write code examples");
-        break;
-    case "friday":
-        console.log("Record videos");
-        break;
-    case "saturday":
-    case "sunday":
-        console.log("Enjoy the weekend = D");
-        break;
-    default:
-        console.log("Not a valid day!");
-        break;
+// switch (day) {
+//     case "monday":
+//         console.log("Plan course structure.");
+//         console.log("Go to coding meeting");
+//         break;
+//     case "tuesday":
+//         console.log("Prepare theory videos");
+//         break;
+//     case "wednesday":
+//     case "thursday":
+//         console.log("Write code examples");
+//         break;
+//     case "friday":
+//         console.log("Record videos");
+//         break;
+//     case "saturday":
+//     case "sunday":
+//         console.log("Enjoy the weekend = D");
+//         break;
+//     default:
+//         console.log("Not a valid day!");
+//         break;
+// }
+
+// //Mini Challenge
+
+// if (day === "monday") {
+//     console.log("Plan course structure.");
+//     console.log("Go to coding meeting");
+// } else if (day === "tuesday") {
+//     console.log("Prepare theory videos");
+// } else if (day === "wednesday" || day === "thursday") {
+//     console.log("Write code examples");
+// } else if (day === "friday") {
+//     console.log("Record videos");
+// } else if (day === "saturday" || day === "sunday") {
+//     console.log("Enjoy the weekend = D");
+// } else {
+//     console.log("Not a valid day!");
+// }
+
+/**********************************************************************************
+Chapter 01 - Lesson 023: Statements VS Expressions
+**********************************************************************************/
+// A expression is a piece a of code that produces a value:
+3 + 4;
+1991; //This is a expression
+true && false && !false;
+
+// A statement is bigger piece of code that not produces a value:
+if (23 > 10) {
+    const str = "23 is bigger.";
 }
 
-//Mini Challenge
-
-if (day === "monday") {
-    console.log("Plan course structure.");
-    console.log("Go to coding meeting");
-} else if (day === "tuesday") {
-    console.log("Prepare theory videos");
-} else if (day === "wednesday" || day === "thursday") {
-    console.log("Write code examples");
-} else if (day === "friday") {
-    console.log("Record videos");
-} else if (day === "saturday" || day === "sunday") {
-    console.log("Enjoy the weekend = D");
-} else {
-    console.log("Not a valid day!");
-}
+const me = "Thomas";
+console.log(`${me} is ${2037 - 1991} years old`);
