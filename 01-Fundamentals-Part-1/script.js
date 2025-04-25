@@ -454,22 +454,69 @@ Test data:
 // const scoreKoalas = (109 + 95 + 123) / 3;
 
 // Data Bonus 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
-const scoreDolphins = (97 + 112 + 81) / 3;
-const scoreKoalas = (109 + 95 + 86) / 3;
+// const scoreDolphins = (97 + 112 + 81) / 3;
+// const scoreKoalas = (109 + 95 + 86) / 3;
 
-console.log("Dolphins score: " + scoreDolphins);
-console.log("Koalas score: " + scoreKoalas);
+// console.log("Dolphins score: " + scoreDolphins);
+// console.log("Koalas score: " + scoreKoalas);
 
-if (scoreDolphins > scoreKoalas && scoreDolphins >= 100) {
-    console.log("The Dophins win the trophy...");
-} else if (scoreDolphins < scoreKoalas && scoreKoalas >= 100) {
-    console.log("The Koalas win the trophy...");
-} else if (
-    scoreDolphins === scoreKoalas &&
-    scoreDolphins >= 100 &&
-    scoreKoalas >= scoreKoalas
-) {
-    console.log("Both wins the trophy!");
+// if (scoreDolphins > scoreKoalas && scoreDolphins >= 100) {
+//     console.log("The Dophins win the trophy...");
+// } else if (scoreDolphins < scoreKoalas && scoreKoalas >= 100) {
+//     console.log("The Koalas win the trophy...");
+// } else if (
+//     scoreDolphins === scoreKoalas &&
+//     scoreDolphins >= 100 &&
+//     scoreKoalas >= scoreKoalas
+// ) {
+//     console.log("Both wins the trophy!");
+// } else {
+//     console.log("No one wins the trophy...");
+// }
+
+/**********************************************************************************************
+Chapter 01 - Lesson 022: The switch Statement
+***********************************************************************************************/
+
+const day = "monday";
+
+switch (day) {
+    case "monday":
+        console.log("Plan course structure.");
+        console.log("Go to coding meeting");
+        break;
+    case "tuesday":
+        console.log("Prepare theory videos");
+        break;
+    case "wednesday":
+    case "thursday":
+        console.log("Write code examples");
+        break;
+    case "friday":
+        console.log("Record videos");
+        break;
+    case "saturday":
+    case "sunday":
+        console.log("Enjoy the weekend = D");
+        break;
+    default:
+        console.log("Not a valid day!");
+        break;
+}
+
+//Mini Challenge
+
+if (day === "monday") {
+    console.log("Plan course structure.");
+    console.log("Go to coding meeting");
+} else if (day === "tuesday") {
+    console.log("Prepare theory videos");
+} else if (day === "wednesday" || day === "thursday") {
+    console.log("Write code examples");
+} else if (day === "friday") {
+    console.log("Record videos");
+} else if (day === "saturday" || day === "sunday") {
+    console.log("Enjoy the weekend = D");
 } else {
-    console.log("No one wins the trophy...");
+    console.log("Not a valid day!");
 }
