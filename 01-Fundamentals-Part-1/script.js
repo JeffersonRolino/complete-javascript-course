@@ -525,14 +525,36 @@ Chapter 01 - Lesson 022: The switch Statement
 Chapter 01 - Lesson 023: Statements VS Expressions
 **********************************************************************************/
 // A expression is a piece a of code that produces a value:
-3 + 4;
-1991; //This is a expression
-true && false && !false;
+// 3 + 4;
+// 1991; //This is a expression
+// true && false && !false;
 
-// A statement is bigger piece of code that not produces a value:
-if (23 > 10) {
-    const str = "23 is bigger.";
+// // A statement is bigger piece of code that not produces a value:
+// if (23 > 10) {
+//     const str = "23 is bigger.";
+// }
+
+// const me = "Thomas";
+// console.log(`${me} is ${2037 - 1991} years old`);
+
+/**********************************************************************************
+Chapter 01 - Lesson 023: Statements VS Expressions
+**********************************************************************************/
+const age = 21;
+// age >= 18
+//     ? console.log("I like to drink wine...")
+//     : console.log("I like to drink water...");
+
+const drink = age >= 18 ? "wine" : "water";
+// console.log(drink);
+
+let drink2;
+if (age >= 18) {
+    drink2 = "wine";
+} else {
+    drink2 = "water";
 }
 
-const me = "Thomas";
-console.log(`${me} is ${2037 - 1991} years old`);
+// console.log(drink2);
+
+console.log(`I like to drink ${age >= 18 ? "wine" : "water"}`);
