@@ -49,20 +49,35 @@ Chapter 02 - Lesson 003: Functions
 /**********************************************************************************
 Chapter 02 - Lesson 004: Function Declarations vs Expressions
 **********************************************************************************/
-//Function Declaraction
-//We can call the function declarations before declare it;
-const age1 = calcAge1(1988);
+// //Function Declaraction
+// //We can call the function declarations before declare it;
+// const age1 = calcAge1(1988);
 
-function calcAge1(birthYear) {
-    return 2025 - birthYear;
-}
+// function calcAge1(birthYear) {
+//     return 2025 - birthYear;
+// }
 
-console.log(age1);
+// console.log(age1);
 
-//Function Expression (Produces a values) - Anonymous Function
-const calcAge2 = function (birthYear) {
-    return 2025 - birthYear;
+// //Function Expression (Produces a values) - Anonymous Function
+// const calcAge2 = function (birthYear) {
+//     return 2025 - birthYear;
+// };
+
+// const age2 = calcAge2(1988);
+// console.log(age2);
+
+/**********************************************************************************
+Chapter 02 - Lesson 005: Arrow Functions
+**********************************************************************************/
+const calcAge3 = (birthYear) => 2025 - birthYear;
+const age3 = calcAge3(1988);
+console.log(age3);
+
+const yearsUntilRetirement = (birthYear, firstName) => {
+    const age = 2025 - birthYear;
+    const retirement = 65 - age;
+    return `${firstName} retires in ${retirement} years...`;
 };
 
-const age2 = calcAge2(1988);
-console.log(age2);
+console.log(yearsUntilRetirement(1991, "John Smith"));
