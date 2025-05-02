@@ -85,17 +85,38 @@ Chapter 02 - Lesson 005: Arrow Functions
 /**********************************************************************************
 Chapter 02 - Lesson 006: Functions Calling Other Functions
 **********************************************************************************/
-function cutFruitPieces(fruit) {
-    return fruit * 4;
-}
+// function cutFruitPieces(fruit) {
+//     return fruit * 4;
+// }
 
-function fruitProcessor(apples, oranges) {
-    const applePieces = cutFruitPieces(apples);
-    const orangePieces = cutFruitPieces(oranges);
+// function fruitProcessor(apples, oranges) {
+//     const applePieces = cutFruitPieces(apples);
+//     const orangePieces = cutFruitPieces(oranges);
 
-    const juice = `Juice with ${applePieces} apples and ${orangePieces} oranges.`;
-    return juice;
-}
+//     const juice = `Juice with ${applePieces} apples and ${orangePieces} oranges.`;
+//     return juice;
+// }
 
-const juice = fruitProcessor(2, 3);
-console.log(juice);
+// const juice = fruitProcessor(2, 3);
+// console.log(juice);
+
+/**********************************************************************************
+Chapter 02 - Lesson 007: Reviewing Functions
+**********************************************************************************/
+const calcAge = function (birthYear) {
+    return 2025 - birthYear;
+};
+
+const yearsUntilRetirement = function (birthYear, firstName) {
+    const age = calcAge(birthYear);
+    const retirement = 65 - age;
+
+    if (retirement <= 0) {
+        return `${firstName} is already retired...`;
+    } else {
+        return `${firstName} retires in ${retirement} years...`;
+    }
+};
+
+console.log(yearsUntilRetirement(1985, "John Smith"));
+console.log(yearsUntilRetirement(1960, "Bob Brown"));
