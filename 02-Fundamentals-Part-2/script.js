@@ -70,14 +70,32 @@ Chapter 02 - Lesson 004: Function Declarations vs Expressions
 /**********************************************************************************
 Chapter 02 - Lesson 005: Arrow Functions
 **********************************************************************************/
-const calcAge3 = (birthYear) => 2025 - birthYear;
-const age3 = calcAge3(1988);
-console.log(age3);
+// const calcAge3 = (birthYear) => 2025 - birthYear;
+// const age3 = calcAge3(1988);
+// console.log(age3);
 
-const yearsUntilRetirement = (birthYear, firstName) => {
-    const age = 2025 - birthYear;
-    const retirement = 65 - age;
-    return `${firstName} retires in ${retirement} years...`;
-};
+// const yearsUntilRetirement = (birthYear, firstName) => {
+//     const age = 2025 - birthYear;
+//     const retirement = 65 - age;
+//     return `${firstName} retires in ${retirement} years...`;
+// };
 
-console.log(yearsUntilRetirement(1991, "John Smith"));
+// console.log(yearsUntilRetirement(1991, "John Smith"));
+
+/**********************************************************************************
+Chapter 02 - Lesson 006: Functions Calling Other Functions
+**********************************************************************************/
+function cutFruitPieces(fruit) {
+    return fruit * 4;
+}
+
+function fruitProcessor(apples, oranges) {
+    const applePieces = cutFruitPieces(apples);
+    const orangePieces = cutFruitPieces(oranges);
+
+    const juice = `Juice with ${applePieces} apples and ${orangePieces} oranges.`;
+    return juice;
+}
+
+const juice = fruitProcessor(2, 3);
+console.log(juice);
