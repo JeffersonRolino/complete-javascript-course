@@ -144,20 +144,65 @@ Chapter 02 - Lesson 008: Coding Challenge #1
 // § Data 1: Dolphins score 44, 23 and 71. Koalas score 65, 54 and 49
 // § Data 2: Dolphins score 85, 54 and 41. Koalas score 23, 34 and 27
 
-const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+// const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
 
-function checkWinner(avgDolphins, avgKoalas) {
-    if (avgDolphins >= avgKoalas * 2) {
-        console.log(`The winner is Dolphins with ${avgDolphins} points!`);
-    } else if (avgKoalas >= avgDolphins * 2) {
-        console.log(`The winner is Koalas with ${avgKoalas} points!`);
-    } else {
-        console.log(
-            `Nobody won... Dophins points: ${avgDolphins} || Koalas points: ${avgKoalas}`
-        );
-    }
-}
+// function checkWinner(avgDolphins, avgKoalas) {
+//     if (avgDolphins >= avgKoalas * 2) {
+//         console.log(`The winner is Dolphins with ${avgDolphins} points!`);
+//     } else if (avgKoalas >= avgDolphins * 2) {
+//         console.log(`The winner is Koalas with ${avgKoalas} points!`);
+//     } else {
+//         console.log(
+//             `Nobody won... Dophins points: ${avgDolphins} || Koalas points: ${avgKoalas}`
+//         );
+//     }
+// }
 
-//Test Data
-// checkWinner(calcAverage(44, 23, 71), calcAverage(65, 54, 49));
-checkWinner(calcAverage(85, 54, 41), calcAverage(23, 34, 27));
+// //Test Data
+// // checkWinner(calcAverage(44, 23, 71), calcAverage(65, 54, 49));
+// checkWinner(calcAverage(85, 54, 41), calcAverage(23, 34, 27));
+
+/**********************************************************************************
+Chapter 02 - Lesson 009: Introduction to Arrays
+**********************************************************************************/
+const friend1 = "Michael";
+const friend2 = "Steven";
+const friend3 = "Peter";
+
+const friends = ["Michael", "Steven", "Peter"];
+console.log(friends);
+
+const years = new Array(1991, 1984, 2008, 2020);
+console.log(years);
+
+console.log(friends[0]);
+console.log(friends[2]);
+
+console.log(friends.length);
+console.log(friends[friends.length - 1]);
+
+friends[2] = "Emily";
+console.log(friends);
+
+const firstName = "Jonas";
+const jonas = [firstName, "Schmedtmann", 2037 - 1991, "teacher", friends];
+console.log(jonas);
+console.log(jonas.length);
+
+//Exercise
+const calcAge = function (birthYear) {
+    return 2025 - birthYear;
+};
+
+const years2 = [1990, 1967, 2002, 2010, 1988];
+console.log(calcAge(years2[0]));
+console.log(calcAge(years2[1]));
+console.log(calcAge(years2[years2.length - 1]));
+
+const ages = [
+    calcAge(years2[0]),
+    calcAge(years2[1]),
+    calcAge(years2[years2.length - 1]),
+];
+
+console.log(ages);
