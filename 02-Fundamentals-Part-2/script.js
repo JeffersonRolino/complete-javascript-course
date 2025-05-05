@@ -210,43 +210,43 @@ Chapter 02 - Lesson 009: Introduction to Arrays
 /**********************************************************************************
 Chapter 02 - Lesson 010: Basic Array Operations (Methods)
 **********************************************************************************/
-const friends = ["Michael", "Steven", "Peter"];
+// const friends = ["Michael", "Steven", "Peter"];
 
-//Insert to the end of the array
-const newLength = friends.push("Tony");
-console.log(friends);
-console.log(newLength);
+// //Insert to the end of the array
+// const newLength = friends.push("Tony");
+// console.log(friends);
+// console.log(newLength);
 
-//Insert to the begin of the array
-friends.unshift("John");
-console.log(friends);
+// //Insert to the begin of the array
+// friends.unshift("John");
+// console.log(friends);
 
-//Remove last element of the array
-const poppped = friends.pop();
-console.log(poppped);
-console.log(friends);
+// //Remove last element of the array
+// const poppped = friends.pop();
+// console.log(poppped);
+// console.log(friends);
 
-//Remove first element of the array
-friends.shift();
-console.log(friends);
+// //Remove first element of the array
+// friends.shift();
+// console.log(friends);
 
-//Find index of a element
-console.log(friends.indexOf("Steven"));
+// //Find index of a element
+// console.log(friends.indexOf("Steven"));
 
-//Return -1 for a element that is not there
-console.log(friends.indexOf("Bob"));
+// //Return -1 for a element that is not there
+// console.log(friends.indexOf("Bob"));
 
-//Check if a element is in the array
-console.log(friends.includes("Steven"));
-console.log(friends.includes("Bob"));
-//This method uses strict validation with triple equals.
-//So the code bellow will return false.
-friends.push(23);
-console.log(friends.includes("23"));
+// //Check if a element is in the array
+// console.log(friends.includes("Steven"));
+// console.log(friends.includes("Bob"));
+// //This method uses strict validation with triple equals.
+// //So the code bellow will return false.
+// friends.push(23);
+// console.log(friends.includes("23"));
 
-if (friends.includes("Peter")) {
-    console.log("You have a friend called Peter");
-}
+// if (friends.includes("Peter")) {
+//     console.log("You have a friend called Peter");
+// }
 
 /**********************************************************************************
 Chapter 02 - Lesson 011: Coding Challenge #2
@@ -262,26 +262,49 @@ Your tasks:
 Test data: 125, 555 and 44
 */
 
-const calcTip = (bill) => {
-    let tip = bill * 0.2;
-    if (bill >= 50 && bill <= 300) {
-        tip = bill * 0.15;
-    }
-    return tip;
+// const calcTip = (bill) => {
+//     let tip = bill * 0.2;
+//     if (bill >= 50 && bill <= 300) {
+//         tip = bill * 0.15;
+//     }
+//     return tip;
+// };
+
+// const bills = [125, 555, 44];
+// const tips = [];
+
+// tips.push(calcTip(bills[0]));
+// tips.push(calcTip(bills[1]));
+// tips.push(calcTip(bills[2]));
+
+// const total = [];
+// total.push(bills[0] + tips[0]);
+// total.push(bills[1] + tips[1]);
+// total.push(bills[2] + tips[2]);
+
+// console.log(bills);
+// console.log(tips);
+// console.log(total);
+
+/**********************************************************************************
+Chapter 02 - Lesson 012: Introduction to Objects
+**********************************************************************************/
+const tonyArray = [
+    "Anthony",
+    "Stark",
+    2025 - 1988,
+    "engineer",
+    ["Happy", "Steve", "Bruce", "Peter"],
+];
+
+console.log(tonyArray);
+
+const tony = {
+    firstName: "Anthony",
+    lastName: "Stark",
+    age: 2025 - 1988,
+    job: "enginner",
+    friends: ["Happy", "Steve", "Bruce", "Peter"],
 };
 
-const bills = [125, 555, 44];
-const tips = [];
-
-tips.push(calcTip(bills[0]));
-tips.push(calcTip(bills[1]));
-tips.push(calcTip(bills[2]));
-
-const total = [];
-total.push(bills[0] + tips[0]);
-total.push(bills[1] + tips[1]);
-total.push(bills[2] + tips[2]);
-
-console.log(bills);
-console.log(tips);
-console.log(total);
+console.log(tony);
