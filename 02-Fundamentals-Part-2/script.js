@@ -165,44 +165,85 @@ Chapter 02 - Lesson 008: Coding Challenge #1
 /**********************************************************************************
 Chapter 02 - Lesson 009: Introduction to Arrays
 **********************************************************************************/
-const friend1 = "Michael";
-const friend2 = "Steven";
-const friend3 = "Peter";
+// const friend1 = "Michael";
+// const friend2 = "Steven";
+// const friend3 = "Peter";
 
+// const friends = ["Michael", "Steven", "Peter"];
+// console.log(friends);
+
+// const years = new Array(1991, 1984, 2008, 2020);
+// console.log(years);
+
+// console.log(friends[0]);
+// console.log(friends[2]);
+
+// console.log(friends.length);
+// console.log(friends[friends.length - 1]);
+
+// friends[2] = "Emily";
+// console.log(friends);
+
+// const firstName = "Jonas";
+// const jonas = [firstName, "Schmedtmann", 2037 - 1991, "teacher", friends];
+// console.log(jonas);
+// console.log(jonas.length);
+
+// //Exercise
+// const calcAge = function (birthYear) {
+//     return 2025 - birthYear;
+// };
+
+// const years2 = [1990, 1967, 2002, 2010, 1988];
+// console.log(calcAge(years2[0]));
+// console.log(calcAge(years2[1]));
+// console.log(calcAge(years2[years2.length - 1]));
+
+// const ages = [
+//     calcAge(years2[0]),
+//     calcAge(years2[1]),
+//     calcAge(years2[years2.length - 1]),
+// ];
+
+// console.log(ages);
+
+/**********************************************************************************
+Chapter 02 - Lesson 010: Basic Array Operations (Methods)
+**********************************************************************************/
 const friends = ["Michael", "Steven", "Peter"];
+
+//Insert to the end of the array
+const newLength = friends.push("Tony");
+console.log(friends);
+console.log(newLength);
+
+//Insert to the begin of the array
+friends.unshift("John");
 console.log(friends);
 
-const years = new Array(1991, 1984, 2008, 2020);
-console.log(years);
-
-console.log(friends[0]);
-console.log(friends[2]);
-
-console.log(friends.length);
-console.log(friends[friends.length - 1]);
-
-friends[2] = "Emily";
+//Remove last element of the array
+const poppped = friends.pop();
+console.log(poppped);
 console.log(friends);
 
-const firstName = "Jonas";
-const jonas = [firstName, "Schmedtmann", 2037 - 1991, "teacher", friends];
-console.log(jonas);
-console.log(jonas.length);
+//Remove first element of the array
+friends.shift();
+console.log(friends);
 
-//Exercise
-const calcAge = function (birthYear) {
-    return 2025 - birthYear;
-};
+//Find index of a element
+console.log(friends.indexOf("Steven"));
 
-const years2 = [1990, 1967, 2002, 2010, 1988];
-console.log(calcAge(years2[0]));
-console.log(calcAge(years2[1]));
-console.log(calcAge(years2[years2.length - 1]));
+//Return -1 for a element that is not there
+console.log(friends.indexOf("Bob"));
 
-const ages = [
-    calcAge(years2[0]),
-    calcAge(years2[1]),
-    calcAge(years2[years2.length - 1]),
-];
+//Check if a element is in the array
+console.log(friends.includes("Steven"));
+console.log(friends.includes("Bob"));
+//This method uses strict validation with triple equals.
+//So the code bellow will return false.
+friends.push(23);
+console.log(friends.includes("23"));
 
-console.log(ages);
+if (friends.includes("Peter")) {
+    console.log("You have a friend called Peter");
+}
