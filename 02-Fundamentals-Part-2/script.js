@@ -341,37 +341,88 @@ Chapter 02 - Lesson 013: Dot vs. Bracket Notation
 /**********************************************************************************
 Chapter 02 - Lesson 014: Object Methods
 **********************************************************************************/
-const tony = {
-    firstName: "Anthony",
-    lastName: "Stark",
-    birthYear: 1988,
-    job: "Enginner",
-    friends: ["Happy", "Steve", "Bruce", "Peter"],
-    hasDriversLicense: true,
-    // calcAge: function (birthYear) {
-    //     return 2025 - birthYear;
-    // },
-    // calcAge: function () {
-    //     console.log(this);
-    //     return 2025 - this.birthYear;
-    // },
-    calcAge: function () {
-        this.age = 2025 - this.birthYear;
-        return this.age;
-    },
-    // prettier-ignore
-    sumary: function () {
-        return `${this.firstName} is a ${this.calcAge()} years old ${this.job}, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
+// const tony = {
+//     firstName: "Anthony",
+//     lastName: "Stark",
+//     birthYear: 1988,
+//     job: "Enginner",
+//     friends: ["Happy", "Steve", "Bruce", "Peter"],
+//     hasDriversLicense: true,
+//     // calcAge: function (birthYear) {
+//     //     return 2025 - birthYear;
+//     // },
+//     // calcAge: function () {
+//     //     console.log(this);
+//     //     return 2025 - this.birthYear;
+//     // },
+//     calcAge: function () {
+//         this.age = 2025 - this.birthYear;
+//         return this.age;
+//     },
+//     // prettier-ignore
+//     sumary: function () {
+//         return `${this.firstName} is a ${this.calcAge()} years old ${this.job}, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
+//     },
+// };
+
+// // console.log(tony.calcAge(1970));
+// // console.log(tony["calcAge"](1970));
+
+// console.log(tony.calcAge());
+// console.log(tony);
+
+// //Challenge
+// // "Jonas is a 46 years old teacher, and he has a driver's license."
+
+// console.log(tony.sumary());
+
+/**********************************************************************************
+Chapter 02 - Lesson 015: Coding Challenge #3
+**********************************************************************************/
+/*
+Let's go back to Mark and John comparing their BMIs! This time, let's use objects to implement the calculations! Remember: BMI = mass / height ** 2 = mass / (height * height) (mass in kg and height in meter).
+
+Your tasks:
+    1. For each of them, create an object with properties for their full name, mass, and height (Mark Miller and John Smith);
+    2. Create a 'calcBMI' method on each object to calculate the BMI (the same method on both objects). Store the BMI value to a property, and also return it from the method;
+    3. Log to the console who has the higher BMI, together with the full name and the respective BMI. Example: "John's BMI (28.3) is higher than Mark's (23.9)!" 
+    
+Test data: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m
+tall.
+*/
+
+const mark = {
+    name: "Mark Miller",
+    mass: 78,
+    height: 1.69,
+    calcBMI: function () {
+        this.BMI = this.mass / this.height ** 2;
+        return this.BMI;
     },
 };
 
-// console.log(tony.calcAge(1970));
-// console.log(tony["calcAge"](1970));
+mark.calcBMI();
+console.log(mark.BMI);
 
-console.log(tony.calcAge());
-console.log(tony);
+const john = {
+    name: "John Smith",
+    mass: 92,
+    height: 1.95,
+    calcBMI: function () {
+        this.BMI = this.mass / this.height ** 2;
+        return this.BMI;
+    },
+};
 
-//Challenge
-// "Jonas is a 46 years old teacher, and he has a driver's license."
+john.calcBMI();
+console.log(john.BMI);
 
-console.log(tony.sumary());
+const printHighestBMI = function (person1, person2) {
+    if (person1.calcBMI() > person2.calcBMI()) {
+        return `${person1.name}'s BMI (${person1.BMI}) is higher than ${person2.name}'s BMI (${person2.BMI})`;
+    } else {
+        return `${person2.name}'s BMI (${person2.BMI}) is higher than ${person1.name}'s BMI (${person1.BMI})`;
+    }
+};
+
+console.log(printHighestBMI(mark, john));
