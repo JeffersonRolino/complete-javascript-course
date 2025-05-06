@@ -289,22 +289,51 @@ Test data: 125, 555 and 44
 /**********************************************************************************
 Chapter 02 - Lesson 012: Introduction to Objects
 **********************************************************************************/
-const tonyArray = [
-    "Anthony",
-    "Stark",
-    2025 - 1988,
-    "engineer",
-    ["Happy", "Steve", "Bruce", "Peter"],
-];
+// const tonyArray = [
+//     "Anthony",
+//     "Stark",
+//     2025 - 1988,
+//     "engineer",
+//     ["Happy", "Steve", "Bruce", "Peter"],
+// ];
 
-console.log(tonyArray);
+// console.log(tonyArray);
 
 const tony = {
     firstName: "Anthony",
     lastName: "Stark",
     age: 2025 - 1988,
-    job: "enginner",
+    job: "Enginner",
     friends: ["Happy", "Steve", "Bruce", "Peter"],
 };
 
 console.log(tony);
+
+/**********************************************************************************
+Chapter 02 - Lesson 013: Dot vs. Bracket Notation
+**********************************************************************************/
+// console.log(tony.lastName);
+// console.log(tony["lastName"]);
+
+const namekey = "Name";
+console.log(tony["first" + namekey]);
+console.log(tony["last" + namekey]);
+
+// const interestIn = prompt(
+//     "What do you want to know about Tony? Choose between firstName, lastName, age, job and friends."
+// );
+
+// if (tony[interestIn]) {
+//     console.log(tony[interestIn]);
+// } else {
+//     console.log("This property does not exists...");
+//     console.log("Choose between firstName, lastName, age, job and friends.");
+// }
+
+tony.location = "Los Angeles";
+tony["twitter"] = "@ironman";
+console.log(tony);
+
+console.log(
+    `${tony.firstName} has ${tony.friends.length} friends, and his best friend is called ${tony.friends[0]}`
+);
