@@ -299,15 +299,15 @@ Chapter 02 - Lesson 012: Introduction to Objects
 
 // console.log(tonyArray);
 
-const tony = {
-    firstName: "Anthony",
-    lastName: "Stark",
-    age: 2025 - 1988,
-    job: "Enginner",
-    friends: ["Happy", "Steve", "Bruce", "Peter"],
-};
+// const tony = {
+//     firstName: "Anthony",
+//     lastName: "Stark",
+//     age: 2025 - 1988,
+//     job: "Enginner",
+//     friends: ["Happy", "Steve", "Bruce", "Peter"],
+// };
 
-console.log(tony);
+// console.log(tony);
 
 /**********************************************************************************
 Chapter 02 - Lesson 013: Dot vs. Bracket Notation
@@ -315,9 +315,9 @@ Chapter 02 - Lesson 013: Dot vs. Bracket Notation
 // console.log(tony.lastName);
 // console.log(tony["lastName"]);
 
-const namekey = "Name";
-console.log(tony["first" + namekey]);
-console.log(tony["last" + namekey]);
+// const namekey = "Name";
+// console.log(tony["first" + namekey]);
+// console.log(tony["last" + namekey]);
 
 // const interestIn = prompt(
 //     "What do you want to know about Tony? Choose between firstName, lastName, age, job and friends."
@@ -330,10 +330,48 @@ console.log(tony["last" + namekey]);
 //     console.log("Choose between firstName, lastName, age, job and friends.");
 // }
 
-tony.location = "Los Angeles";
-tony["twitter"] = "@ironman";
+// tony.location = "Los Angeles";
+// tony["twitter"] = "@ironman";
+// console.log(tony);
+
+// console.log(
+//     `${tony.firstName} has ${tony.friends.length} friends, and his best friend is called ${tony.friends[0]}`
+// );
+
+/**********************************************************************************
+Chapter 02 - Lesson 014: Object Methods
+**********************************************************************************/
+const tony = {
+    firstName: "Anthony",
+    lastName: "Stark",
+    birthYear: 1988,
+    job: "Enginner",
+    friends: ["Happy", "Steve", "Bruce", "Peter"],
+    hasDriversLicense: true,
+    // calcAge: function (birthYear) {
+    //     return 2025 - birthYear;
+    // },
+    // calcAge: function () {
+    //     console.log(this);
+    //     return 2025 - this.birthYear;
+    // },
+    calcAge: function () {
+        this.age = 2025 - this.birthYear;
+        return this.age;
+    },
+    // prettier-ignore
+    sumary: function () {
+        return `${this.firstName} is a ${this.calcAge()} years old ${this.job}, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
+    },
+};
+
+// console.log(tony.calcAge(1970));
+// console.log(tony["calcAge"](1970));
+
+console.log(tony.calcAge());
 console.log(tony);
 
-console.log(
-    `${tony.firstName} has ${tony.friends.length} friends, and his best friend is called ${tony.friends[0]}`
-);
+//Challenge
+// "Jonas is a 46 years old teacher, and he has a driver's license."
+
+console.log(tony.sumary());
