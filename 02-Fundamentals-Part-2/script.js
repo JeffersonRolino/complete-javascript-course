@@ -391,38 +391,53 @@ Test data: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.9
 tall.
 */
 
-const mark = {
-    name: "Mark Miller",
-    mass: 78,
-    height: 1.69,
-    calcBMI: function () {
-        this.BMI = this.mass / this.height ** 2;
-        return this.BMI;
-    },
-};
+// const mark = {
+//     name: "Mark Miller",
+//     mass: 78,
+//     height: 1.69,
+//     calcBMI: function () {
+//         this.BMI = this.mass / this.height ** 2;
+//         return this.BMI;
+//     },
+// };
 
-mark.calcBMI();
-console.log(mark.BMI);
+// mark.calcBMI();
+// console.log(mark.BMI);
 
-const john = {
-    name: "John Smith",
-    mass: 92,
-    height: 1.95,
-    calcBMI: function () {
-        this.BMI = this.mass / this.height ** 2;
-        return this.BMI;
-    },
-};
+// const john = {
+//     name: "John Smith",
+//     mass: 92,
+//     height: 1.95,
+//     calcBMI: function () {
+//         this.BMI = this.mass / this.height ** 2;
+//         return this.BMI;
+//     },
+// };
 
-john.calcBMI();
-console.log(john.BMI);
+// john.calcBMI();
+// console.log(john.BMI);
 
-const printHighestBMI = function (person1, person2) {
-    if (person1.calcBMI() > person2.calcBMI()) {
-        return `${person1.name}'s BMI (${person1.BMI}) is higher than ${person2.name}'s BMI (${person2.BMI})`;
-    } else {
-        return `${person2.name}'s BMI (${person2.BMI}) is higher than ${person1.name}'s BMI (${person1.BMI})`;
-    }
-};
+// const printHighestBMI = function (person1, person2) {
+//     if (person1.calcBMI() > person2.calcBMI()) {
+//         return `${person1.name}'s BMI (${person1.BMI}) is higher than ${person2.name}'s BMI (${person2.BMI})`;
+//     } else {
+//         return `${person2.name}'s BMI (${person2.BMI}) is higher than ${person1.name}'s BMI (${person1.BMI})`;
+//     }
+// };
 
-console.log(printHighestBMI(mark, john));
+// console.log(printHighestBMI(mark, john));
+
+/**********************************************************************************
+Chapter 02 - Lesson 016: Iterations - The for loop
+**********************************************************************************/
+// console.log("Lifting weights repetition 1");
+// console.log("Lifting weights repetition 2");
+// console.log("Lifting weights repetition 3");
+// console.log("Lifting weights repetition 3");
+// console.log("Lifting weights repetition 4");
+// console.log("Lifting weights repetition 5");
+
+// for loop keeps running while condition is TRUE
+for (let rep = 1; rep <= 10; rep++) {
+    console.log(`Lifting weights repetition ${rep}`);
+}
