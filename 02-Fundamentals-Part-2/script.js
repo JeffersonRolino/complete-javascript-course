@@ -495,21 +495,40 @@ Chapter 02 - Lesson 017: Looping Arrays, Breaking and Continuing
 /**********************************************************************************
 Chapter 02 - Lesson 018: Looping Backwards and Loops in Loops
 **********************************************************************************/
-const tony = [
-    "Anthony",
-    "Stark",
-    2025 - 1988,
-    "engineer",
-    ["Happy", "Steve", "Bruce", "Peter"],
-];
+// const tony = [
+//     "Anthony",
+//     "Stark",
+//     2025 - 1988,
+//     "engineer",
+//     ["Happy", "Steve", "Bruce", "Peter"],
+// ];
 
-for (let i = tony.length; i > 0; i--) {
-    console.log(tony[i]);
-}
+// for (let i = tony.length; i > 0; i--) {
+//     console.log(tony[i]);
+// }
 
-for (let i = 0; i < 4; i++) {
-    console.log(`Outter Loop ${i}`);
-    for (let j = 0; j < 6; j++) {
-        console.log(`\tInner Loop ${j}`);
+// for (let i = 0; i < 4; i++) {
+//     console.log(`Outter Loop ${i}`);
+//     for (let j = 0; j < 6; j++) {
+//         console.log(`\tInner Loop ${j}`);
+//     }
+// }
+
+/**********************************************************************************
+Chapter 02 - Lesson 019: The While loop
+**********************************************************************************/
+// let counter = 0;
+// while (counter < 10) {
+//     console.log(`While loop: ${counter}`);
+//     counter++;
+// }
+
+let dice = Math.trunc(Math.random() * 6 + 1);
+
+while (dice !== 6) {
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random() * 6 + 1);
+    if (dice === 6) {
+        console.log("You rolled a 6");
     }
 }
