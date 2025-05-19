@@ -445,16 +445,16 @@ Chapter 02 - Lesson 016: Iterations - The for loop
 /**********************************************************************************
 Chapter 02 - Lesson 017: Looping Arrays, Breaking and Continuing
 **********************************************************************************/
-const tony = [
-    "Anthony",
-    "Stark",
-    2025 - 1988,
-    "engineer",
-    ["Happy", "Steve", "Bruce", "Peter"],
-    true,
-];
+// const tony = [
+//     "Anthony",
+//     "Stark",
+//     2025 - 1988,
+//     "engineer",
+//     ["Happy", "Steve", "Bruce", "Peter"],
+//     true,
+// ];
 
-const types = [];
+// const types = [];
 
 // for (let i = 0; i < tony.length; i++) {
 //     // console.log(tony[i], typeof tony[i]);
@@ -475,19 +475,41 @@ const types = [];
 // console.log(ages);
 
 //Continue and break
-console.log("PRINT ONLY STRINGS");
-for (let i = 0; i < tony.length; i++) {
-    if (typeof tony[i] !== "string") continue;
-    //continue will exit this iteration and not print this line
-    //when the element is not a string
-    console.log(tony[i], typeof tony[i]);
+// console.log("PRINT ONLY STRINGS");
+// for (let i = 0; i < tony.length; i++) {
+//     if (typeof tony[i] !== "string") continue;
+//     //continue will exit this iteration and not print this line
+//     //when the element is not a string
+//     console.log(tony[i], typeof tony[i]);
+// }
+
+// console.log("-----------------------------------------------------");
+
+// console.log("BREAK WHEN FIND A NUMBER...");
+// for (let i = 0; i < tony.length; i++) {
+//     if (typeof tony[i] === "number") break;
+//     //break will exit the loop when the element is a number
+//     console.log(tony[i], typeof tony[i]);
+// }
+
+/**********************************************************************************
+Chapter 02 - Lesson 018: Looping Backwards and Loops in Loops
+**********************************************************************************/
+const tony = [
+    "Anthony",
+    "Stark",
+    2025 - 1988,
+    "engineer",
+    ["Happy", "Steve", "Bruce", "Peter"],
+];
+
+for (let i = tony.length; i > 0; i--) {
+    console.log(tony[i]);
 }
 
-console.log("-----------------------------------------------------");
-
-console.log("BREAK WHEN FIND A NUMBER...");
-for (let i = 0; i < tony.length; i++) {
-    if (typeof tony[i] === "number") break;
-    //break will exit the loop when the element is a number
-    console.log(tony[i], typeof tony[i]);
+for (let i = 0; i < 4; i++) {
+    console.log(`Outter Loop ${i}`);
+    for (let j = 0; j < 6; j++) {
+        console.log(`\tInner Loop ${j}`);
+    }
 }
