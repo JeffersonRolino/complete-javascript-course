@@ -437,7 +437,57 @@ Chapter 02 - Lesson 016: Iterations - The for loop
 // console.log("Lifting weights repetition 4");
 // console.log("Lifting weights repetition 5");
 
-// for loop keeps running while condition is TRUE
-for (let rep = 1; rep <= 10; rep++) {
-    console.log(`Lifting weights repetition ${rep}`);
+// // for loop keeps running while condition is TRUE
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log(`Lifting weights repetition ${rep}`);
+// }
+
+/**********************************************************************************
+Chapter 02 - Lesson 017: Looping Arrays, Breaking and Continuing
+**********************************************************************************/
+const tony = [
+    "Anthony",
+    "Stark",
+    2025 - 1988,
+    "engineer",
+    ["Happy", "Steve", "Bruce", "Peter"],
+    true,
+];
+
+const types = [];
+
+// for (let i = 0; i < tony.length; i++) {
+//     // console.log(tony[i], typeof tony[i]);
+//     // types[i] = typeof tony[i];
+//     types.push(typeof tony[i]);
+// }
+
+// console.log(types);
+
+// const years = [1991, 2007, 1969, 2020];
+// const ages = [];
+
+// for (let i = 0; i < years.length; i++) {
+//     const year = years[i];
+//     ages.push(2025 - year);
+// }
+
+// console.log(ages);
+
+//Continue and break
+console.log("PRINT ONLY STRINGS");
+for (let i = 0; i < tony.length; i++) {
+    if (typeof tony[i] !== "string") continue;
+    //continue will exit this iteration and not print this line
+    //when the element is not a string
+    console.log(tony[i], typeof tony[i]);
+}
+
+console.log("-----------------------------------------------------");
+
+console.log("BREAK WHEN FIND A NUMBER...");
+for (let i = 0; i < tony.length; i++) {
+    if (typeof tony[i] === "number") break;
+    //break will exit the loop when the element is a number
+    console.log(tony[i], typeof tony[i]);
 }
