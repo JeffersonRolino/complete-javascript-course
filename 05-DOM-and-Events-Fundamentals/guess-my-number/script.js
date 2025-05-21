@@ -13,9 +13,16 @@ document.querySelector(".check").addEventListener("click", function () {
 
     if (!guess) {
         message.textContent = "No number!";
-    } else if (guess === secretNumber) {
+    }
+    //When the player wins...
+    else if (guess === secretNumber) {
         message.textContent = "Correct Number!";
-    } else if (guess > secretNumber) {
+
+        document.querySelector("body").style.backgroundColor = "#60b347";
+        document.querySelector(".number").style.width = "30rem";
+    }
+    //When the number is higher
+    else if (guess > secretNumber) {
         if (score > 1) {
             score--;
             scoreElement.textContent = score;
@@ -25,7 +32,9 @@ document.querySelector(".check").addEventListener("click", function () {
             scoreElement.textContent = score;
             message.textContent = "Game Over!";
         }
-    } else if (guess < secretNumber) {
+    }
+    //When the number is lower
+    else if (guess < secretNumber) {
         if (score > 1) {
             score--;
             scoreElement.textContent = score;
