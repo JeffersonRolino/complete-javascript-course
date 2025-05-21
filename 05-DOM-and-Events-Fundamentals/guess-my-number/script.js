@@ -2,11 +2,13 @@
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 10;
+let highscore = 0;
 
 const message = document.querySelector(".message");
 const scoreElement = document.querySelector(".score");
 const resetBtn = document.querySelector(".again");
 const guessInput = document.querySelector(".guess");
+const highscoreElement = document.querySelector(".highscore");
 
 document.querySelector(".check").addEventListener("click", function () {
     const guess = Number(guessInput.value);
@@ -22,6 +24,11 @@ document.querySelector(".check").addEventListener("click", function () {
 
         document.querySelector("body").style.backgroundColor = "#60b347";
         document.querySelector(".number").style.width = "30rem";
+
+        if (score > highscore) {
+            highscore = score;
+            highscoreElement.textContent = highscore;
+        }
     }
     //When the number is higher
     else if (guess > secretNumber) {
