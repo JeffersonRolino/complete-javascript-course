@@ -1,14 +1,15 @@
 "use strict";
 
-const secretNumber = Math.trunc(Math.random() * 20) + 1;
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 10;
 
-document.querySelector(".number").textContent = secretNumber;
 const message = document.querySelector(".message");
 const scoreElement = document.querySelector(".score");
+const resetBtn = document.querySelector(".again");
+const guessInput = document.querySelector(".guess");
 
 document.querySelector(".check").addEventListener("click", function () {
-    const guess = Number(document.querySelector(".guess").value);
+    const guess = Number(guessInput.value);
     console.log(guess, typeof guess);
 
     if (!guess) {
@@ -17,6 +18,7 @@ document.querySelector(".check").addEventListener("click", function () {
     //When the player wins...
     else if (guess === secretNumber) {
         message.textContent = "Correct Number!";
+        document.querySelector(".number").textContent = secretNumber;
 
         document.querySelector("body").style.backgroundColor = "#60b347";
         document.querySelector(".number").style.width = "30rem";
@@ -45,4 +47,20 @@ document.querySelector(".check").addEventListener("click", function () {
             message.textContent = "Game Over!";
         }
     }
+});
+
+resetBtn.addEventListener("click", () => {
+    //Reset State (score and secret number)
+    score = 10;
+    secretNumber = Math.trunc(Math.random() * 20) + 1;
+
+    //Reset GUI
+    scoreElement.textContent = score;
+    document.querySelector(".number").textContent = "?";
+    message.textContent = "Start guessing...";
+    guessInput.value = "";
+
+    //Reset Styles
+    document.querySelector("body").style.backgroundColor = "#222";
+    document.querySelector(".number").style.width = "15rem";
 });
