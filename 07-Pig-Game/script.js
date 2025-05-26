@@ -36,6 +36,29 @@ const switchPlayer = function () {
     player1Element.classList.toggle("player--active");
 };
 
+const init = function () {
+    scores[0] = 0;
+    scores[1] = 0;
+    currentScore = 0;
+    activePlayer = 0;
+    playing = true;
+
+    diceElement.classList.remove("hidden");
+
+    score0Element.textContent = 0;
+    score1Element.textContent = 0;
+
+    activePlayer = 0;
+
+    player0Element.classList.remove("player--winner");
+    player1Element.classList.remove("player--winner");
+    player0Element.classList.add("player--active");
+    player1Element.classList.remove("player--active");
+
+    diceElement.src = `dice-6.png`;
+};
+init();
+
 //Rolling dice functionality
 btnRoll.addEventListener("click", function () {
     if (playing) {
@@ -87,3 +110,5 @@ btnHold.addEventListener("click", function () {
         }
     }
 });
+
+btnNew.addEventListener("click", reset);
