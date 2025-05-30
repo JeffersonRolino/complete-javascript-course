@@ -47,52 +47,74 @@
 /**********************************************************************************
  * Chapter 08 - Lesson 012: Regular Functions vs Arrow Functions
  **********************************************************************************/
-var firstName = "Matilda";
+// var firstName = "Matilda";
 
-const john = {
-    firstName: "John",
-    birthYear: 1991,
-    calcAge: function () {
-        console.log(2025 - this.birthYear);
-        console.log(this);
+// const john = {
+//     firstName: "John",
+//     birthYear: 1991,
+//     calcAge: function () {
+//         console.log(2025 - this.birthYear);
+//         console.log(this);
 
-        // Solution 1
-        // const self = this;
-        // const isMillenial = function () {
-        //     console.log(self);
-        //     console.log(self.birthYear >= 1981 && self.birthYear <= 1996);
-        // };
-        // isMillenial();
+//         // Solution 1
+//         // const self = this;
+//         // const isMillenial = function () {
+//         //     console.log(self);
+//         //     console.log(self.birthYear >= 1981 && self.birthYear <= 1996);
+//         // };
+//         // isMillenial();
 
-        // Solution 2
-        const isMillenial = () => {
-            console.log(this);
-            console.log(this.birthYear >= 1981 && this.birthYear <= 1996);
-        };
-        isMillenial();
-    },
+//         // Solution 2
+//         const isMillenial = () => {
+//             console.log(this);
+//             console.log(this.birthYear >= 1981 && this.birthYear <= 1996);
+//         };
+//         isMillenial();
+//     },
 
-    greet: () => console.log(`Hey ${this.firstName}`),
+//     greet: () => console.log(`Hey ${this.firstName}`),
+// };
+
+// john.greet();
+// console.log(this.birthYear);
+
+// john.calcAge();
+
+// // ARGUMENT Keyword
+// const addExpression = function (a, b) {
+//     console.log(arguments);
+//     return a + b;
+// };
+
+// addExpression(2, 5);
+// addExpression(7, 42, 56, 23, 2);
+
+// // Arrow function do not have the arguments object (array)
+// var addArrow = (a, b) => {
+//     console.log(arguments);
+//     return a + b;
+// };
+
+// addArrow(4, 3);
+
+/**********************************************************************************
+ * Chapter 08 - Lesson 013: Primitives vs Objects
+ **********************************************************************************/
+let age = 30;
+let oldAge = age;
+
+age = 31;
+
+console.log(age);
+console.log(oldAge);
+
+const me = {
+    name: "John",
+    age: 30,
 };
 
-john.greet();
-console.log(this.birthYear);
+const friend = me;
+friend.age = 27;
 
-john.calcAge();
-
-// ARGUMENT Keyword
-const addExpression = function (a, b) {
-    console.log(arguments);
-    return a + b;
-};
-
-addExpression(2, 5);
-addExpression(7, 42, 56, 23, 2);
-
-// Arrow function do not have the arguments object (array)
-var addArrow = (a, b) => {
-    console.log(arguments);
-    return a + b;
-};
-
-addArrow(4, 3);
+console.log(`Friend Age: ${friend.age}`);
+console.log(`My Age: ${me.age}`);
