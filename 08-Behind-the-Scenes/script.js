@@ -100,21 +100,63 @@
 /**********************************************************************************
  * Chapter 08 - Lesson 013: Primitives vs Objects
  **********************************************************************************/
-let age = 30;
-let oldAge = age;
+// let age = 30;
+// let oldAge = age;
 
-age = 31;
+// age = 31;
 
-console.log(age);
-console.log(oldAge);
+// console.log(age);
+// console.log(oldAge);
 
-const me = {
-    name: "John",
-    age: 30,
+// const me = {
+//     name: "John",
+//     age: 30,
+// };
+
+// const friend = me;
+// friend.age = 27;
+
+// console.log(`Friend Age: ${friend.age}`);
+// console.log(`My Age: ${me.age}`);
+
+/**********************************************************************************
+ * Chapter 08 - Lesson 014: Primitives vs Objects in Practice
+ **********************************************************************************/
+let lastName = "Williams";
+let oldLastName = lastName;
+lastName = "Davis";
+
+console.log(lastName);
+console.log(oldLastName);
+
+// Reference Types
+const jessica = {
+    firstName: "Jessica",
+    lastName: "Williams",
+    age: 27,
 };
 
-const friend = me;
-friend.age = 27;
+const marriedJessica = jessica;
+marriedJessica.lastName = "Davis";
 
-console.log(`Friend Age: ${friend.age}`);
-console.log(`My Age: ${me.age}`);
+console.log("Before marriage: ", jessica);
+console.log("After marriage: ", marriedJessica);
+
+// marriedJessica = {};
+
+//Copying Objects
+const jessica2 = {
+    firstName: "Jessica",
+    lastName: "Williams",
+    age: 27,
+    family: ["Alice", "Jonas", "Bob"],
+};
+
+const jessicaCopy = Object.assign({}, jessica2);
+jessicaCopy.lastName = "Davis";
+
+jessicaCopy.family.push("Mary");
+jessicaCopy.family.push("Hanna");
+
+console.log("Before marriage: ", jessica2);
+console.log("After marriage: ", jessicaCopy);
