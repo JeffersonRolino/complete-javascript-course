@@ -29,7 +29,6 @@ const restaurant = {
     categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
     starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
     mainMenu: ["Pizza", "Pasta", "Risotto"],
-
     openingHours: {
         thu: {
             open: 12,
@@ -44,4 +43,48 @@ const restaurant = {
             close: 24,
         },
     },
+    order: function (starterIndex, mainIndex) {
+        return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+    },
 };
+
+/**********************************************************************************
+ * Chapter 09 - Lesson 003: Destructuring Arrays
+ **********************************************************************************/
+const numbers = [2, 3, 4];
+const a = numbers[0];
+const b = numbers[1];
+const c = numbers[2];
+
+console.log(a, b, c);
+
+const [x, y, z] = numbers;
+console.log(x, y, z);
+
+let [main, , secondary] = restaurant.categories;
+console.log(main, secondary);
+
+//Switching Variables in the tradional way
+// let temp = main;
+// main = secondary;
+// secondary = temp;
+// console.log(main, secondary);
+
+//Switching Variables using destructuring
+[main, secondary] = [secondary, main];
+console.log(main, secondary);
+
+const [starter, mainCourse] = restaurant.order(2, 0);
+console.log(starter, mainCourse);
+
+// Nested Destructuring
+const nested = [2, 4, [5, 6]];
+// const [i, , j] = nested;
+// console.log(i, j);
+
+const [i, , [j, k]] = nested;
+console.log(i, j, k);
+
+// Default values
+const [p = 1, q = 1, r = 1] = [8, 9];
+console.log(p, q, r);
