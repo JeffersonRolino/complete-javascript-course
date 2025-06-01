@@ -46,45 +46,105 @@ const restaurant = {
     order: function (starterIndex, mainIndex) {
         return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
     },
+    orderDelivery: function ({
+        starterIndex = 1,
+        mainIndex = 0,
+        time = "20:00",
+        address,
+    }) {
+        console.log(
+            `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+        );
+    },
 };
 
 /**********************************************************************************
  * Chapter 09 - Lesson 003: Destructuring Arrays
  **********************************************************************************/
-const numbers = [2, 3, 4];
-const a = numbers[0];
-const b = numbers[1];
-const c = numbers[2];
+// const numbers = [2, 3, 4];
+// const a = numbers[0];
+// const b = numbers[1];
+// const c = numbers[2];
 
-console.log(a, b, c);
+// console.log(a, b, c);
 
-const [x, y, z] = numbers;
-console.log(x, y, z);
+// const [x, y, z] = numbers;
+// console.log(x, y, z);
 
-let [main, , secondary] = restaurant.categories;
-console.log(main, secondary);
-
-//Switching Variables in the tradional way
-// let temp = main;
-// main = secondary;
-// secondary = temp;
+// let [main, , secondary] = restaurant.categories;
 // console.log(main, secondary);
 
-//Switching Variables using destructuring
-[main, secondary] = [secondary, main];
-console.log(main, secondary);
+// //Switching Variables in the tradional way
+// // let temp = main;
+// // main = secondary;
+// // secondary = temp;
+// // console.log(main, secondary);
 
-const [starter, mainCourse] = restaurant.order(2, 0);
-console.log(starter, mainCourse);
+// //Switching Variables using destructuring
+// [main, secondary] = [secondary, main];
+// console.log(main, secondary);
 
-// Nested Destructuring
-const nested = [2, 4, [5, 6]];
-// const [i, , j] = nested;
-// console.log(i, j);
+// const [starter, mainCourse] = restaurant.order(2, 0);
+// console.log(starter, mainCourse);
 
-const [i, , [j, k]] = nested;
-console.log(i, j, k);
+// // Nested Destructuring
+// const nested = [2, 4, [5, 6]];
+// // const [i, , j] = nested;
+// // console.log(i, j);
 
-// Default values
-const [p = 1, q = 1, r = 1] = [8, 9];
-console.log(p, q, r);
+// const [i, , [j, k]] = nested;
+// console.log(i, j, k);
+
+// // Default values
+// const [p = 1, q = 1, r = 1] = [8, 9];
+// console.log(p, q, r);
+
+/**********************************************************************************
+ * Chapter 09 - Lesson 004: Destructuring Objects
+ **********************************************************************************/
+const { name, openingHours, categories } = restaurant;
+
+console.log(name);
+console.log(openingHours);
+console.log(categories);
+
+const {
+    name: restaurantName,
+    openingHours: hours,
+    categories: tags,
+} = restaurant;
+
+console.log(restaurantName);
+console.log(hours);
+console.log(tags);
+
+//Default values
+const { menu = ["Pizza", "Hamburguer", "Soup"], starterMenu: starters = [] } =
+    restaurant;
+
+console.log(menu);
+console.log(starters);
+
+//Mutating variables
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+
+({ a, b } = obj);
+console.log(a, b);
+
+//Nested Objects
+
+const {
+    fri: { open, close },
+} = openingHours;
+console.log(open, close);
+
+restaurant.orderDelivery({
+    time: "22:30",
+    address: "Via del Sole, 21",
+    mainIndex: 2,
+    starterIndex: 2,
+});
+
+restaurant.orderDelivery({ address: "Via del Sole, 21", starterIndex: 1 });
