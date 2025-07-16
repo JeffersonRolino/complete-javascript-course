@@ -56,6 +56,11 @@ const restaurant = {
             `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
         );
     },
+    orderPasta: function (ing1, ing2, ing3) {
+        console.log(
+            `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
+        );
+    },
 };
 
 /**********************************************************************************
@@ -102,49 +107,104 @@ const restaurant = {
 /**********************************************************************************
  * Chapter 09 - Lesson 004: Destructuring Objects
  **********************************************************************************/
-const { name, openingHours, categories } = restaurant;
+// const { name, openingHours, categories } = restaurant;
 
-console.log(name);
-console.log(openingHours);
-console.log(categories);
+// console.log(name);
+// console.log(openingHours);
+// console.log(categories);
 
-const {
-    name: restaurantName,
-    openingHours: hours,
-    categories: tags,
-} = restaurant;
+// const {
+//     name: restaurantName,
+//     openingHours: hours,
+//     categories: tags,
+// } = restaurant;
 
-console.log(restaurantName);
-console.log(hours);
-console.log(tags);
+// console.log(restaurantName);
+// console.log(hours);
+// console.log(tags);
 
-//Default values
-const { menu = ["Pizza", "Hamburguer", "Soup"], starterMenu: starters = [] } =
-    restaurant;
+// //Default values
+// const { menu = ["Pizza", "Hamburguer", "Soup"], starterMenu: starters = [] } =
+//     restaurant;
 
+// console.log(menu);
+// console.log(starters);
+
+// //Mutating variables
+// let a = 111;
+// let b = 999;
+// const obj = { a: 23, b: 7, c: 14 };
+
+// ({ a, b } = obj);
+// console.log(a, b);
+
+// //Nested Objects
+
+// const {
+//     fri: { open, close },
+// } = openingHours;
+// console.log(open, close);
+
+// restaurant.orderDelivery({
+//     time: "22:30",
+//     address: "Via del Sole, 21",
+//     mainIndex: 2,
+//     starterIndex: 2,
+// });
+
+// restaurant.orderDelivery({ address: "Via del Sole, 21", starterIndex: 1 });
+
+/**********************************************************************************
+ * Chapter 09 - Lesson 005: The Spread Operator
+ **********************************************************************************/
+/*
+The JavaScript spread operator, denoted by three dots (...), is a powerful feature introduced in ES6 (ECMAScript 2015) that allows an iterable (like an array, string, or object) to be "expanded" or "spread out" into its individual elements or properties.
+*/
+
+const numbers = [7, 8, 9];
+const badNewArray = [1, 2, numbers[0], numbers[1], numbers[2]];
+console.log(badNewArray);
+
+const newArray = [1, 2, ...numbers];
+console.log(newArray);
+
+console.log(...newArray);
+
+const newMenu = [...restaurant.mainMenu, "Gnocci"];
+console.log(newMenu);
+
+//Copy Array - Shallow Copy
+const mainMenuCopy = [...restaurant.mainMenu];
+
+console.log(mainMenuCopy);
+
+//Join 2 Arrays
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
 console.log(menu);
-console.log(starters);
 
-//Mutating variables
-let a = 111;
-let b = 999;
-const obj = { a: 23, b: 7, c: 14 };
+//Iterables: arrays, strings, maps, sets. NOT OBJECTS
+const string = "John Snow";
+const letters = [...string];
+console.log(letters);
 
-({ a, b } = obj);
-console.log(a, b);
+//Real-world example
+// const ingredients = [
+//     prompt("Let's make pasta! Ingredient 1?"),
+//     prompt("Let's make pasta! Ingredient 2?"),
+//     prompt("Let's make pasta! Ingredient 3?"),
+// ];
 
-//Nested Objects
+// console.log(ingredients);
 
-const {
-    fri: { open, close },
-} = openingHours;
-console.log(open, close);
+// restaurant.orderPasta(...ingredients);
 
-restaurant.orderDelivery({
-    time: "22:30",
-    address: "Via del Sole, 21",
-    mainIndex: 2,
-    starterIndex: 2,
-});
+//Objects
+const newRestaurant = { ...restaurant, founder: "Guiseppe", foundedYear: 1998 };
+console.log(newRestaurant);
 
-restaurant.orderDelivery({ address: "Via del Sole, 21", starterIndex: 1 });
+//Deep Copy of Objects
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = "Ristorante Roma";
+
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
