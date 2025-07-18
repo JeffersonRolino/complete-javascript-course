@@ -265,31 +265,42 @@ The JavaScript spread operator, denoted by three dots (...), is a powerful featu
  **********************************************************************************/
 //Boolean Operators can Use ANY data type, return ANY data type and short-circuiting;
 
-console.log("---------------------- OR OPERATOR ----------------------");
-console.log(3 || "Harry");
-console.log("" || "Harry");
-console.log(true || 0);
-console.log(undefined || null);
+// console.log("---------------------- OR OPERATOR ----------------------");
+// console.log(3 || "Harry");
+// console.log("" || "Harry");
+// console.log(true || 0);
+// console.log(undefined || null);
 
-//Return "Hello" because is the first truthy value
-console.log(undefined || 0 || "" || "Hello" || 23 || null);
+// //Return "Hello" because is the first truthy value
+// console.log(undefined || 0 || "" || "Hello" || 23 || null);
 
-restaurant.numGuests = 23;
-const guests = restaurant.numGuests ? restaurant.numGuests : 10;
+// restaurant.numGuests = 23;
+// const guests = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guests);
+
+// const guests2 = restaurant.numGuests || 10;
+// console.log(guests2);
+
+// console.log("---------------------- AND OPERATOR ----------------------");
+// console.log(0 && "John");
+// console.log(7 && "John");
+
+// console.log("Hello" && 23 && null && "John");
+
+// //Checking if a property exists in a object
+// if (restaurant.orderPizza) {
+//     restaurant.orderPizza("mushrooms", "spinach");
+// }
+
+// restaurant.orderPizza && restaurant.orderPizza("mushrooms", "spinach");
+
+/**********************************************************************************
+ * Chapter 09 - Lesson 008: The Nullish Coalescing Operator()
+ **********************************************************************************/
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
 console.log(guests);
 
-const guests2 = restaurant.numGuests || 10;
-console.log(guests2);
-
-console.log("---------------------- AND OPERATOR ----------------------");
-console.log(0 && "John");
-console.log(7 && "John");
-
-console.log("Hello" && 23 && null && "John");
-
-//Checking if a property exists in a object
-if (restaurant.orderPizza) {
-    restaurant.orderPizza("mushrooms", "spinach");
-}
-
-restaurant.orderPizza && restaurant.orderPizza("mushrooms", "spinach");
+// Nullish values: null and undefined (NOT 0 or '')
+const guestsCorrect = restaurant.numGuests ?? 10;
+console.log(guestsCorrect);
