@@ -228,34 +228,68 @@ The JavaScript spread operator, denoted by three dots (...), is a powerful featu
 // console.log(arr);
 
 // REST, because on LEFT side of "=" sign
-const [a, b, ...others] = [1, 2, 3, 4, 5];
-console.log(a, b, others);
+// const [a, b, ...others] = [1, 2, 3, 4, 5];
+// console.log(a, b, others);
 
-const [pizza, , risotto, ...otherFood] = [
-    ...restaurant.mainMenu,
-    ...restaurant.starterMenu,
-];
-console.log(pizza, risotto, otherFood);
+// const [pizza, , risotto, ...otherFood] = [
+//     ...restaurant.mainMenu,
+//     ...restaurant.starterMenu,
+// ];
+// console.log(pizza, risotto, otherFood);
 
-//Objects
-const { sat, ...weekdays } = restaurant.openingHours;
-console.log(weekdays);
+// //Objects
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(weekdays);
 
-//2) Functions
-const add = function (...numbers) {
-    let sum = 0;
-    for (let i = 0; i < numbers.length; i++) {
-        sum += numbers[i];
-    }
-    console.log(sum);
-};
+// //2) Functions
+// const add = function (...numbers) {
+//     let sum = 0;
+//     for (let i = 0; i < numbers.length; i++) {
+//         sum += numbers[i];
+//     }
+//     console.log(sum);
+// };
 
-add(2, 3);
-add(5, 3, 7, 2);
-add(8, 2, 5, 3, 2, 1, 4);
+// add(2, 3);
+// add(5, 3, 7, 2);
+// add(8, 2, 5, 3, 2, 1, 4);
 
-const x = [23, 5, 7];
-add(...x);
+// const x = [23, 5, 7];
+// add(...x);
 
-restaurant.orderPizza("mushrooms", "onion", "olives", "cheese", "spinach");
-restaurant.orderPizza("mushrooms");
+// restaurant.orderPizza("mushrooms", "onion", "olives", "cheese", "spinach");
+// restaurant.orderPizza("mushrooms");
+
+/**********************************************************************************
+ * Chapter 09 - Lesson 007: Short Circuiting
+ **********************************************************************************/
+//Boolean Operators can Use ANY data type, return ANY data type and short-circuiting;
+
+console.log("---------------------- OR OPERATOR ----------------------");
+console.log(3 || "Harry");
+console.log("" || "Harry");
+console.log(true || 0);
+console.log(undefined || null);
+
+//Return "Hello" because is the first truthy value
+console.log(undefined || 0 || "" || "Hello" || 23 || null);
+
+restaurant.numGuests = 23;
+const guests = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+console.log("---------------------- AND OPERATOR ----------------------");
+console.log(0 && "John");
+console.log(7 && "John");
+
+console.log("Hello" && 23 && null && "John");
+
+//Checking if a property exists in a object
+if (restaurant.orderPizza) {
+    restaurant.orderPizza("mushrooms", "spinach");
+}
+
+restaurant.orderPizza && restaurant.orderPizza("mushrooms", "spinach");
