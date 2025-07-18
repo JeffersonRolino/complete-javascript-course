@@ -61,6 +61,10 @@ const restaurant = {
             `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
         );
     },
+    orderPizza: function (mainIngredient, ...otherIngredients) {
+        console.log(mainIngredient);
+        console.log(otherIngredients);
+    },
 };
 
 /**********************************************************************************
@@ -161,50 +165,97 @@ const restaurant = {
 The JavaScript spread operator, denoted by three dots (...), is a powerful feature introduced in ES6 (ECMAScript 2015) that allows an iterable (like an array, string, or object) to be "expanded" or "spread out" into its individual elements or properties.
 */
 
-const numbers = [7, 8, 9];
-const badNewArray = [1, 2, numbers[0], numbers[1], numbers[2]];
-console.log(badNewArray);
+// const numbers = [7, 8, 9];
+// const badNewArray = [1, 2, numbers[0], numbers[1], numbers[2]];
+// console.log(badNewArray);
 
-const newArray = [1, 2, ...numbers];
-console.log(newArray);
+// const newArray = [1, 2, ...numbers];
+// console.log(newArray);
 
-console.log(...newArray);
+// console.log(...newArray);
 
-const newMenu = [...restaurant.mainMenu, "Gnocci"];
-console.log(newMenu);
+// const newMenu = [...restaurant.mainMenu, "Gnocci"];
+// console.log(newMenu);
 
-//Copy Array - Shallow Copy
-const mainMenuCopy = [...restaurant.mainMenu];
+// //Copy Array - Shallow Copy
+// const mainMenuCopy = [...restaurant.mainMenu];
 
-console.log(mainMenuCopy);
+// console.log(mainMenuCopy);
 
-//Join 2 Arrays
-const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
-console.log(menu);
+// //Join 2 Arrays
+// const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(menu);
 
-//Iterables: arrays, strings, maps, sets. NOT OBJECTS
-const string = "John Snow";
-const letters = [...string];
-console.log(letters);
+// //Iterables: arrays, strings, maps, sets. NOT OBJECTS
+// const string = "John Snow";
+// const letters = [...string];
+// console.log(letters);
 
-//Real-world example
-// const ingredients = [
-//     prompt("Let's make pasta! Ingredient 1?"),
-//     prompt("Let's make pasta! Ingredient 2?"),
-//     prompt("Let's make pasta! Ingredient 3?"),
-// ];
+// //Real-world example
+// // const ingredients = [
+// //     prompt("Let's make pasta! Ingredient 1?"),
+// //     prompt("Let's make pasta! Ingredient 2?"),
+// //     prompt("Let's make pasta! Ingredient 3?"),
+// // ];
 
-// console.log(ingredients);
+// // console.log(ingredients);
 
-// restaurant.orderPasta(...ingredients);
+// // restaurant.orderPasta(...ingredients);
+
+// //Objects
+// const newRestaurant = { ...restaurant, founder: "Guiseppe", foundedYear: 1998 };
+// console.log(newRestaurant);
+
+// //Deep Copy of Objects
+// const restaurantCopy = { ...restaurant };
+// restaurantCopy.name = "Ristorante Roma";
+
+// console.log(restaurantCopy.name);
+// console.log(restaurant.name);
+
+/**********************************************************************************
+ * Chapter 09 - Lesson 006: Rest Pattern and Parameters
+ **********************************************************************************/
+/*
+    The Rest Operator works opposite to the Spread Operator, it allows to pack a set of
+    elements... 
+
+    Must be the last element in the array...
+*/
+
+// SPREAD, because on RIGHT side of "=" sign
+// const arr = [1, 2, ...[3, 4, 5]];
+// console.log(arr);
+
+// REST, because on LEFT side of "=" sign
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+const [pizza, , risotto, ...otherFood] = [
+    ...restaurant.mainMenu,
+    ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
 
 //Objects
-const newRestaurant = { ...restaurant, founder: "Guiseppe", foundedYear: 1998 };
-console.log(newRestaurant);
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
 
-//Deep Copy of Objects
-const restaurantCopy = { ...restaurant };
-restaurantCopy.name = "Ristorante Roma";
+//2) Functions
+const add = function (...numbers) {
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        sum += numbers[i];
+    }
+    console.log(sum);
+};
 
-console.log(restaurantCopy.name);
-console.log(restaurant.name);
+add(2, 3);
+add(5, 3, 7, 2);
+add(8, 2, 5, 3, 2, 1, 4);
+
+const x = [23, 5, 7];
+add(...x);
+
+restaurant.orderPizza("mushrooms", "onion", "olives", "cheese", "spinach");
+restaurant.orderPizza("mushrooms");
