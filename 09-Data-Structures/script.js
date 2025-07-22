@@ -297,10 +297,45 @@ The JavaScript spread operator, denoted by three dots (...), is a powerful featu
 /**********************************************************************************
  * Chapter 09 - Lesson 008: The Nullish Coalescing Operator()
  **********************************************************************************/
-restaurant.numGuests = 0;
-const guests = restaurant.numGuests || 10;
-console.log(guests);
+// restaurant.numGuests = 0;
+// const guests = restaurant.numGuests || 10;
+// console.log(guests);
 
-// Nullish values: null and undefined (NOT 0 or '')
-const guestsCorrect = restaurant.numGuests ?? 10;
-console.log(guestsCorrect);
+// // Nullish values: null and undefined (NOT 0 or '')
+// const guestsCorrect = restaurant.numGuests ?? 10;
+// console.log(guestsCorrect);
+
+/**********************************************************************************
+ * Chapter 09 - Lesson 009: Logical Assignment Operators
+ **********************************************************************************/
+const rest1 = {
+    name: "Capri",
+    // numGuest: 20,
+    numGuest: 0,
+};
+
+const rest2 = {
+    name: "La Piazza",
+    owner: "Giovanni Rossi",
+};
+
+// rest1.numGuest = rest1.numGuest || 10;
+// rest2.numGuest = rest2.numGuest || 10;
+
+// OR assignment operator assign a value if the variable is falsy...
+// rest1.numGuest ||= 10;
+// rest2.numGuest ||= 10;
+
+// nullish assignment operator (null or undefined)
+rest1.numGuest ??= 10;
+rest2.numGuest ??= 10;
+
+// rest1.owner = rest1.owner && "<ANONYMOUS>";
+// rest2.owner = rest2.owner && "<ANONYMOUS>";
+
+// AND assignment operator assign a value if the variable is truthy...
+rest1.owner &&= "<ANONYMOUS>";
+rest2.owner &&= "<ANONYMOUS>";
+
+console.log(rest1);
+console.log(rest2);
