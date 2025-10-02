@@ -492,26 +492,109 @@ Your tasks:
 /**********************************************************************************
  * Chapter 09 - Lesson 014: Looping Objects - Keys, Values and Entries
  **********************************************************************************/
-// PROPERTIES KEYS
-const properties = Object.keys(openingHours);
-console.log(properties);
+// // PROPERTIES KEYS
+// const properties = Object.keys(openingHours);
+// console.log(properties);
 
-let openStr = `We are open on ${properties.length} days: `;
+// let openStr = `We are open on ${properties.length} days: `;
 
-for (const day of properties) {
-    openStr += `${day}, `;
+// for (const day of properties) {
+//     openStr += `${day}, `;
+// }
+
+// console.log(openStr);
+
+// // PROPERTIES VALUES
+// const values = Object.values(openingHours);
+// console.log(values);
+
+// // OBJECT ENTRIES
+// const entries = Object.entries(openingHours);
+// console.log(entries);
+
+// for (const [key, { open, close }] of entries) {
+//     console.log(`On ${key} we open at ${open} and close at ${close}`);
+// }
+
+/**********************************************************************************
+ * Chapter 09 - Lesson 015: Coding Challenge #2
+ **********************************************************************************/
+/*
+Let's continue with our football betting app! Keep using the 'game' variable from before.
+Your tasks:
+    1. Loop over the game.scored array and print each player name to the console, along with the goal number (Example: "Goal 1: Lewandowski");
+
+    2. Use a loop to calculate the average odd and log it to the console (We already studied how to calculate averages, you can go check if you don't remember);
+
+    3. Print the 3 odds to the console, but in a nice formatted way, exactly like this:
+        Odd of victory Bayern Munich: 1.33
+        Odd of draw: 3.25
+        Odd of victory Borrussia Dortmund: 6.5
+    Get the team names directly from the game object, don't hardcode them (except for "draw"). Hint: Note how the odds and the game objects have the same property names;
+*/
+
+const game = {
+    team1: "Bayern Munich",
+    team2: "Borrussia Dortmund",
+    players: [
+        [
+            "Neuer",
+            "Pavard",
+            "Martinez",
+            "Alaba",
+            "Davies",
+            "Kimmich",
+            "Goretzka",
+            "Coman",
+            "Muller",
+            "Gnarby",
+            "Lewandowski",
+        ],
+        [
+            "Burki",
+            "Schulz",
+            "Hummels",
+            "Akanji",
+            "Hakimi",
+            "Weigl",
+            "Witsel",
+            "Hazard",
+            "Brandt",
+            "Sancho",
+            "Gotze",
+        ],
+    ],
+    score: "4:0",
+    scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
+    date: "Nov 9th, 2037",
+    odds: {
+        team1: 1.33,
+        draw: 3.25,
+        team2: 6.5,
+    },
+};
+
+// Task 1:
+console.log(" --------------------- Task 1 ---------------------");
+for (const [index, player] of game.scored.entries()) {
+    console.log(`Goal ${index + 1}: ${player}`);
 }
 
-console.log(openStr);
+// Task 2:
+console.log(" --------------------- Task 2 ---------------------");
+let sum = 0;
+let values = Object.values(game.odds);
+for (const odd of values) {
+    sum += odd;
+}
+console.log(sum / values.length);
 
-// PROPERTIES VALUES
-const values = Object.values(openingHours);
-console.log(values);
-
-// OBJECT ENTRIES
-const entries = Object.entries(openingHours);
-console.log(entries);
-
-for (const [key, { open, close }] of entries) {
-    console.log(`On ${key} we open at ${open} and close at ${close}`);
+// Task 3:
+console.log(" --------------------- Task 3 ---------------------");
+for (const odd of Object.entries(game.odds)) {
+    console.log(
+        game[odd[0]]
+            ? `Odd of victory ${game[odd[0]]}: ${odd[1]}`
+            : `Odd draw: ${odd[1]}`
+    );
 }
