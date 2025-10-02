@@ -22,6 +22,23 @@ const mexicanFoods = new Set([
     "garlic",
 ]);
 
+const weekdays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+
+const openingHours = {
+    [weekdays[3]]: {
+        open: 12,
+        close: 22,
+    },
+    [weekdays[4]]: {
+        open: 11,
+        close: 23,
+    },
+    sat: {
+        open: 0, // Open 24 hours
+        close: 24,
+    },
+};
+
 // Data needed for first part of the section
 const restaurant = {
     name: "Classico Italiano",
@@ -29,24 +46,12 @@ const restaurant = {
     categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
     starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
     mainMenu: ["Pizza", "Pasta", "Risotto"],
-    openingHours: {
-        thu: {
-            open: 12,
-            close: 22,
-        },
-        fri: {
-            open: 11,
-            close: 23,
-        },
-        sat: {
-            open: 0, // Open 24 hours
-            close: 24,
-        },
-    },
-    order: function (starterIndex, mainIndex) {
+    // ES6 Enhanced object literals (if the name is the same, we don't need to assign the value)
+    openingHours,
+    order(starterIndex, mainIndex) {
         return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
     },
-    orderDelivery: function ({
+    orderDelivery({
         starterIndex = 1,
         mainIndex = 0,
         time = "20:00",
@@ -56,12 +61,12 @@ const restaurant = {
             `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
         );
     },
-    orderPasta: function (ing1, ing2, ing3) {
+    orderPasta(ing1, ing2, ing3) {
         console.log(
             `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
         );
     },
-    orderPizza: function (mainIngredient, ...otherIngredients) {
+    orderPizza(mainIngredient, ...otherIngredients) {
         console.log(mainIngredient);
         console.log(otherIngredients);
     },
@@ -436,12 +441,17 @@ Your tasks:
 /**********************************************************************************
  * Chapter 09 - Lesson 011: Looping Arrays The for-of Loop
  **********************************************************************************/
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
-for (const item of menu) {
-    console.log(item);
-}
+// for (const item of menu) {
+//     console.log(item);
+// }
 
-for (const [i, item] of menu.entries()) {
-    console.log(`${i}: ${item}`);
-}
+// for (const [i, item] of menu.entries()) {
+//     console.log(`${i}: ${item}`);
+// }
+
+/**********************************************************************************
+ * Chapter 09 - Lesson 012: Enhanced Object Literals
+ **********************************************************************************/
+console.log(restaurant);
