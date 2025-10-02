@@ -533,68 +533,114 @@ Your tasks:
     Get the team names directly from the game object, don't hardcode them (except for "draw"). Hint: Note how the odds and the game objects have the same property names;
 */
 
-const game = {
-    team1: "Bayern Munich",
-    team2: "Borrussia Dortmund",
-    players: [
-        [
-            "Neuer",
-            "Pavard",
-            "Martinez",
-            "Alaba",
-            "Davies",
-            "Kimmich",
-            "Goretzka",
-            "Coman",
-            "Muller",
-            "Gnarby",
-            "Lewandowski",
-        ],
-        [
-            "Burki",
-            "Schulz",
-            "Hummels",
-            "Akanji",
-            "Hakimi",
-            "Weigl",
-            "Witsel",
-            "Hazard",
-            "Brandt",
-            "Sancho",
-            "Gotze",
-        ],
-    ],
-    score: "4:0",
-    scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
-    date: "Nov 9th, 2037",
-    odds: {
-        team1: 1.33,
-        draw: 3.25,
-        team2: 6.5,
-    },
-};
+// const game = {
+//     team1: "Bayern Munich",
+//     team2: "Borrussia Dortmund",
+//     players: [
+//         [
+//             "Neuer",
+//             "Pavard",
+//             "Martinez",
+//             "Alaba",
+//             "Davies",
+//             "Kimmich",
+//             "Goretzka",
+//             "Coman",
+//             "Muller",
+//             "Gnarby",
+//             "Lewandowski",
+//         ],
+//         [
+//             "Burki",
+//             "Schulz",
+//             "Hummels",
+//             "Akanji",
+//             "Hakimi",
+//             "Weigl",
+//             "Witsel",
+//             "Hazard",
+//             "Brandt",
+//             "Sancho",
+//             "Gotze",
+//         ],
+//     ],
+//     score: "4:0",
+//     scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
+//     date: "Nov 9th, 2037",
+//     odds: {
+//         team1: 1.33,
+//         draw: 3.25,
+//         team2: 6.5,
+//     },
+// };
 
-// Task 1:
-console.log(" --------------------- Task 1 ---------------------");
-for (const [index, player] of game.scored.entries()) {
-    console.log(`Goal ${index + 1}: ${player}`);
+// // Task 1:
+// console.log(" --------------------- Task 1 ---------------------");
+// for (const [index, player] of game.scored.entries()) {
+//     console.log(`Goal ${index + 1}: ${player}`);
+// }
+
+// // Task 2:
+// console.log(" --------------------- Task 2 ---------------------");
+// let sum = 0;
+// let values = Object.values(game.odds);
+// for (const odd of values) {
+//     sum += odd;
+// }
+// console.log(sum / values.length);
+
+// // Task 3:
+// console.log(" --------------------- Task 3 ---------------------");
+// for (const odd of Object.entries(game.odds)) {
+//     console.log(
+//         game[odd[0]]
+//             ? `Odd of victory ${game[odd[0]]}: ${odd[1]}`
+//             : `Odd draw: ${odd[1]}`
+//     );
+// }
+
+/**********************************************************************************
+ * Chapter 09 - Lesson 016: Sets
+ **********************************************************************************/
+const ordersSet = new Set([
+    "Pasta",
+    "Pizza",
+    "Pizza",
+    "Risotto",
+    "Pasta",
+    "Pizza",
+]);
+console.log(ordersSet);
+
+// Remember that Strings are also iterables...
+console.log(new Set("Steve"));
+
+// Checking the size
+console.log(ordersSet.size);
+
+// Checking if the set has a element
+console.log(ordersSet.has("Pizza"));
+console.log(ordersSet.has("Bread"));
+
+// Adding a element to a set
+ordersSet.add("Garlic Bread");
+ordersSet.add("Garlic Bread");
+
+ordersSet.delete("Risotto");
+
+// console.log(ordersSet);
+
+for (const order of ordersSet) {
+    console.log(order);
 }
 
-// Task 2:
-console.log(" --------------------- Task 2 ---------------------");
-let sum = 0;
-let values = Object.values(game.odds);
-for (const odd of values) {
-    sum += odd;
-}
-console.log(sum / values.length);
+//Example
+const staff = ["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"];
+const staffSet = [...new Set(staff)];
+console.log(staffSet);
 
-// Task 3:
-console.log(" --------------------- Task 3 ---------------------");
-for (const odd of Object.entries(game.odds)) {
-    console.log(
-        game[odd[0]]
-            ? `Odd of victory ${game[odd[0]]}: ${odd[1]}`
-            : `Odd draw: ${odd[1]}`
-    );
-}
+console.log(
+    new Set(["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"]).size
+);
+
+console.log(new Set("Jefferson").size);
