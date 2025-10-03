@@ -602,45 +602,86 @@ Your tasks:
 /**********************************************************************************
  * Chapter 09 - Lesson 016: Sets
  **********************************************************************************/
-const ordersSet = new Set([
-    "Pasta",
-    "Pizza",
-    "Pizza",
-    "Risotto",
-    "Pasta",
-    "Pizza",
-]);
-console.log(ordersSet);
-
-// Remember that Strings are also iterables...
-console.log(new Set("Steve"));
-
-// Checking the size
-console.log(ordersSet.size);
-
-// Checking if the set has a element
-console.log(ordersSet.has("Pizza"));
-console.log(ordersSet.has("Bread"));
-
-// Adding a element to a set
-ordersSet.add("Garlic Bread");
-ordersSet.add("Garlic Bread");
-
-ordersSet.delete("Risotto");
-
+// const ordersSet = new Set([
+//     "Pasta",
+//     "Pizza",
+//     "Pizza",
+//     "Risotto",
+//     "Pasta",
+//     "Pizza",
+// ]);
 // console.log(ordersSet);
 
-for (const order of ordersSet) {
-    console.log(order);
-}
+// // Remember that Strings are also iterables...
+// console.log(new Set("Steve"));
 
-//Example
-const staff = ["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"];
-const staffSet = [...new Set(staff)];
-console.log(staffSet);
+// // Checking the size
+// console.log(ordersSet.size);
 
-console.log(
-    new Set(["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"]).size
-);
+// // Checking if the set has a element
+// console.log(ordersSet.has("Pizza"));
+// console.log(ordersSet.has("Bread"));
 
-console.log(new Set("Jefferson").size);
+// // Adding a element to a set
+// ordersSet.add("Garlic Bread");
+// ordersSet.add("Garlic Bread");
+
+// ordersSet.delete("Risotto");
+
+// // console.log(ordersSet);
+
+// for (const order of ordersSet) {
+//     console.log(order);
+// }
+
+// //Example
+// const staff = ["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"];
+// const staffSet = [...new Set(staff)];
+// console.log(staffSet);
+
+// console.log(
+//     new Set(["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"]).size
+// );
+
+// console.log(new Set("Jefferson").size);
+
+/**********************************************************************************
+ * Chapter 09 - Lesson 017: Maps Fundamentals
+ **********************************************************************************/
+const rest = new Map();
+rest.set("name", "Classico Italiano");
+rest.set(1, "Firenze, Italy");
+rest.set(2, "Lisbon, Portugual");
+
+rest.set("categories", ["Italian", "Pizzeria", "Vegetarian", "Organic"])
+    .set("open", 11)
+    .set("close", 23)
+    .set(true, "We are open")
+    .set(false, "We are close");
+
+console.log(rest);
+
+console.log(rest.get("name"));
+console.log(rest.get(true));
+console.log(rest.get(1));
+
+const time = 21;
+console.log(rest.get(time > rest.get("open") && time < rest.get("close")));
+
+console.log(rest.has("categories"));
+console.log(rest.has("popcorn"));
+
+rest.delete(2);
+console.log(rest);
+
+console.log(rest.size);
+
+// rest.clear();
+
+const arr = [1, 2];
+rest.set(arr, "Test");
+console.log(rest.get(arr));
+
+rest.set(document.querySelector("h1"), "Heading");
+
+console.log(rest);
